@@ -37,7 +37,9 @@ The template gives all of that for free. Editing it is strictly less work than r
 
 ## Building a launch training deck, or a customer-facing pitch? Start from a blueprint
 
-For a **support, channel, or sales training deck**, or a **customer-facing sales pitch** (the recurring Digi deck genres), don't invent the structure — follow the proven archetype in **[references/deck-blueprints/](references/deck-blueprints/README.md)**. Each blueprint gives the ordered slide sequence, what each slide does, the per-audience voice, and which visual fits each slide. Pick the family by audience first: **internal/** for teaching Digi people (or partner reps) to sell, position, or support something new — support engineer → `internal/support-enablement.md`, partner rep → `internal/channel-enablement.md`, direct seller → `internal/sales-enablement.md` — or **customer-facing/** for persuading someone outside Digi → `customer-facing/sales-pitch.md`. Swap in the new product; keep the moves. (Abstracted from shipped Digi launch decks.)
+For any recurring Digi deck genre, don't invent the structure — follow the proven archetype in **[references/deck-blueprints/](references/deck-blueprints/README.md)**, which has a find-yours-by-role table up top. Each blueprint gives the ordered slide sequence, what each slide does, the per-audience voice, and which visual fits each slide.
+
+Pick the family by audience first. **internal/** is for Digi people (or partner reps) who have to act on it: launch enablement (`internal/support-enablement.md`, `internal/channel-enablement.md`, `internal/sales-enablement.md`), decisions and funding (`internal/leadership-review.md`, `internal/business-case.md`), and company or team alignment (`internal/all-hands.md`, `internal/project-kickoff.md`). **customer-facing/** is for people outside Digi: `customer-facing/sales-pitch.md` for a prospect, `customer-facing/customer-qbr.md` for a customer you already have, `customer-facing/webinar.md` for a webinar or conference session. Swap in your own subject; keep the moves.
 
 ---
 
@@ -174,7 +176,7 @@ Unpack the template, inject brand-styled shapes into the content slide (`slide2.
 - `${CLAUDE_PLUGIN_ROOT}/assets/digi-template.pptx` — Official Digi brand template. **Start here for every slide, one or many.**
 - `references/template-workflow.md` — How to edit the bundled template (unpack/edit/repack), including the single one-off slide recipe
 - `references/visuals.md` — Screenshots, placeholders, and generated graphics: the decision rule, image zones, and the two scripts. Read when a slide needs more than text.
-- `references/deck-blueprints/` — Blueprints for support / channel / sales launch training decks (`internal/`) and the customer-facing sales pitch (`customer-facing/`) — slide archetypes + voice + visuals per audience. Start here for those genres.
+- `references/deck-blueprints/` — Blueprints for the decks Digi ships across every function: `internal/` (launch enablement, leadership review, business case, all-hands, project kickoff) and `customer-facing/` (sales pitch, customer QBR, webinar/conference). Slide archetypes + voice + visuals per audience. Start at its README for the find-yours-by-role table.
 - `scripts/gen_graphic.py` — Generate an on-brand Digi graphic (Nano Banana 2 / Gemini). `--prompt <subject> --out <file> --zone <name>`.
 - `scripts/place_image.py` — Place an image into an unpacked slide at a named zone or explicit geometry.
 - `references/from-scratch.md` — **DEPRECATED.** Retained only for the chart-color and palette constants; do not follow its build workflow. The from-scratch path was removed (see Workflow Decision).
