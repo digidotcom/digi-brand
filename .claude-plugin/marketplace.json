@@ -1,0 +1,15 @@
+{
+  "name": "digi-brand",
+  "description": "Digi International brand and document tooling for Claude.",
+  "owner": {
+    "name": "Josh Flinn",
+    "email": "joshua.flinn@digi.com"
+  },
+  "plugins": [
+    {
+      "name": "digi-brand",
+      "source": "./",
+      "description": "Digi's brand spine plus PowerPoint and Word skills and a library of Digi document blueprints."
+    }
+  ]
+}
