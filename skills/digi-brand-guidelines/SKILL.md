@@ -8,7 +8,8 @@ license: MIT
 
 The normative source for Digi's visual identity. Every value here is extracted
 from the official PowerPoint template's theme XML
-(`assets/digi-template.pptx` → `ppt/theme/theme1.xml`), not transcribed by hand.
+(`assets/2024-Digi-Confidential-PPT-Template.potx` → `ppt/theme/theme1.xml`;
+the Public master carries the identical theme), not transcribed by hand.
 Regenerate by running `python3 tools/extract_theme.py` from a clone of this repo.
 
 ## Palette

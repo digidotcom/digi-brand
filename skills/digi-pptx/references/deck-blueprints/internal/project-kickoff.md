@@ -54,7 +54,7 @@ blueprint serves.
 ## Layout notes
 
 Same template mechanics as the other internal blueprints
-(`digi-template.pptx`, zones from [../../visuals.md](../../visuals.md)).
+(`2024-Digi-Confidential-PPT-Template.potx`, zones from [../../visuals.md](../../visuals.md)).
 Slide 6 (workstreams and owners) and slide 10 (risks) favor a `full-band`
 table over bullets — both are structurally a table (row per workstream, row
 per risk) and shrinking them to fit a half-width column is how the "one

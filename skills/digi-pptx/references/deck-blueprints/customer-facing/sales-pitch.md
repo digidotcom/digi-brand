@@ -74,7 +74,7 @@ degrades the deck gracefully rather than breaking it:
 
 ## Layout notes
 
-Same template mechanics as the internal blueprints (`digi-template.pptx`,
+Same template mechanics as the internal blueprints (`2024-Digi-Public-PPT-Template.potx`,
 zones from [../../visuals.md](../../visuals.md)): title + short left column +
 one visual per slide, callout band for the takeaway. Two differences from the
 internal decks:

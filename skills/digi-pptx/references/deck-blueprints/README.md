@@ -3,7 +3,7 @@
 Reusable blueprints for the decks Digi actually ships, across every function.
 A blueprint is the **content architecture** for one audience: the ordered
 slide archetypes, what each slide does, the framing move that makes it land,
-the layout, and the voice. The brand chrome comes from `digi-template.pptx`;
+the layout, and the voice. The brand chrome comes from the official master for the deck's classification (Confidential for internal/, Public for customer-facing/ — see `SKILL.md`);
 these supply the *thinking*. A blueprint produces no `.pptx` on its own — it
 tells you what to build, and `digi-pptx` builds it.
 

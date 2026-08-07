@@ -52,7 +52,7 @@ open-Q&A close are constant.
 ## Layout notes
 
 Same template mechanics as the other internal blueprints
-(`digi-template.pptx`, zones from [../../visuals.md](../../visuals.md)):
+(`2024-Digi-Confidential-PPT-Template.potx`, zones from [../../visuals.md](../../visuals.md)):
 title + short left column + one visual per slide where a visual earns its
 place, callout band for the takeaway. Slides 2 and 5 are usually text-only —
 the content is the plain statement itself, not a supporting graphic. Slide 3

@@ -7,7 +7,10 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 from extract_theme import extract, extract_fonts  # noqa: E402
 
-TEMPLATE = ROOT / "assets" / "digi-template.pptx"
+MASTERS = [
+    ROOT / "assets" / "2024-Digi-Confidential-PPT-Template.potx",
+    ROOT / "assets" / "2024-Digi-Public-PPT-Template.potx",
+]
 
 PALETTE = {
     "dk1": "1B4965",
@@ -45,18 +48,21 @@ def iter_text_files():
             yield path
 
 
-def test_template_theme_matches_declared_palette():
-    assert extract(TEMPLATE) == PALETTE
+def test_master_themes_match_declared_palette():
+    for master in MASTERS:
+        assert extract(master) == PALETTE, master.name
 
 
 def test_navy_is_1b4965():
-    assert extract(TEMPLATE)["dk1"] == "1B4965"
+    for master in MASTERS:
+        assert extract(master)["dk1"] == "1B4965", master.name
 
 
 def test_fonts_are_source_sans_pro():
-    fonts = extract_fonts(TEMPLATE)
-    assert fonts["majorFont"] == "Source Sans Pro"
-    assert fonts["minorFont"] == "Source Sans Pro"
+    for master in MASTERS:
+        fonts = extract_fonts(master)
+        assert fonts["majorFont"] == "Source Sans Pro", master.name
+        assert fonts["minorFont"] == "Source Sans Pro", master.name
 
 
 def test_no_off_palette_hex_anywhere_in_repo():

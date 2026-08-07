@@ -41,7 +41,7 @@ provenance watermark (fine internally — just know it's there).
 ## Image zones
 
 Geometry in inches on the 10 × 5.625" canvas. Every zone sits below the title
-(ends ~1.11") and above the footer (5.44"). `place_image.py --zone <name>`
+(title band ends 0.80"; body starts 0.85") and above the footer (5.44"). `place_image.py --zone <name>`
 knows these; `gen_graphic.py --zone <name>` generates at the matching aspect so
 the image fills the box with no distortion or letterbox.
 

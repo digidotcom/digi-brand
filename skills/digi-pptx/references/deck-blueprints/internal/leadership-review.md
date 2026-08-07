@@ -76,7 +76,7 @@ structure and the ask-first open are constant regardless of topic.
 ## Layout notes
 
 Same template mechanics as the other internal blueprints
-(`digi-template.pptx`, zones from [../../visuals.md](../../visuals.md)).
+(`2024-Digi-Confidential-PPT-Template.potx`, zones from [../../visuals.md](../../visuals.md)).
 Slide 6 and the appendix tables favor the `full-band` zone for a wide table
 over splitting numbers across two half-width columns. Appendix slides use
 the same title treatment as the main line so a jump-to during Q&A doesn't

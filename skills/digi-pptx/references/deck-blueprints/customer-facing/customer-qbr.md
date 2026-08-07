@@ -73,7 +73,7 @@ open issues to escalate, cut in this order:
 
 ## Layout notes
 
-Same template mechanics as the other blueprints (`digi-template.pptx`, zones
+Same template mechanics as the other blueprints (`2024-Digi-Public-PPT-Template.potx`, zones
 from [../../visuals.md](../../visuals.md)): title + short left column + one
 visual per slide, callout band for the takeaway. One difference from
 `sales-pitch.md`: **slide 3 (where we did not deliver) is a table, not a

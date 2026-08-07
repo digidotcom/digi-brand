@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Extract the brand palette and fonts from the Digi PowerPoint template.
+"""Extract the brand palette and fonts from a Digi PowerPoint master.
 
-The template's theme XML is the single source of truth for Digi's colors. Every
+The master's theme XML is the single source of truth for Digi's colors. Every
 hex value in this repo is checked against it, so the palette can never drift the
-way it did when digi-brand-guidelines and digi-pptx disagreed on navy.
+way it did when digi-brand-guidelines and digi-pptx disagreed on navy. Both
+official 2024 masters (Confidential and Public) carry the identical theme;
+default target is the Confidential one.
 """
 import re
 import sys
@@ -49,7 +51,8 @@ def extract_fonts(pptx_path: Path) -> dict[str, str]:
 
 if __name__ == "__main__":
     path = Path(sys.argv[1]) if len(sys.argv) > 1 else (
-        Path(__file__).resolve().parent.parent / "assets" / "digi-template.pptx"
+        Path(__file__).resolve().parent.parent
+        / "assets" / "2024-Digi-Confidential-PPT-Template.potx"
     )
     palette = extract(path)
     for slot in SLOT_ORDER:

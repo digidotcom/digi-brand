@@ -82,7 +82,7 @@ audio before they decide whether to stay. Compress hard, in this order:
 ## Layout notes
 
 Same template mechanics as the other blueprints
-(`digi-template.pptx`, zones from [../../visuals.md](../../visuals.md)):
+(`2024-Digi-Public-PPT-Template.potx`, zones from [../../visuals.md](../../visuals.md)):
 title + short left column + one visual per slide, callout band for the
 takeaway. Differences specific to this genre:
 - **Slide 1 is a poster, not a title card, in the conference variant.** Large

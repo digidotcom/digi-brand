@@ -30,7 +30,7 @@ const WHITE          = "FFFFFF";
 
 ## Content Slide Skeleton
 
-Every Digi content slide needs three things: white background, thin green top bar, bottom-left footer with logo.
+Every Digi content slide needs three things: white background, thin green top bar, bottom-left logo + classification footer — all of which the official master supplies and this path cannot.
 
 ```javascript
 const slide = pres.addSlide();
@@ -45,16 +45,9 @@ slide.addShape("rect", {
 
 // 2. Your content goes here (between y=0.4 and y=6.9)
 
-// 3. Footer at bottom-left
-// If you have a DIGI logo PNG, add it at x=0.4, y=7.05, h=0.3
-slide.addText([
-  { text: "2", options: { bold: true, color: DIGI_DARK_GRAY } },
-  { text: "  |  CONFIDENTIAL  |  © DIGI INTERNATIONAL INC.", options: { color: DIGI_MED_GRAY } }
-], {
-  x: 1.2, y: 7.1, w: 9.0, h: 0.25,
-  fontFace: "Source Sans Pro", fontSize: 9,
-  align: "left", valign: "middle"
-});
+// 3. Footer: DO NOT hand-build one. The classification footer comes from the
+//    chosen official master's layouts (see template-workflow.md) — which is
+//    one of the reasons this from-scratch path was removed.
 ```
 
 ## Layout Patterns
@@ -130,9 +123,8 @@ slide.addChart("bar", chartData, {
 
 ## Hard Don'ts
 
-- ❌ **Don't add triangles or diagonal accents on content slides.** Save them for title/closing.
-- ❌ **Don't use #F5F7F7 as the slide background.** White only.
-- ❌ **Don't try to recreate the title-slide binary-wave motif from scratch.** Use the template if you need a title slide.
+- ❌ **Don't hand-draw the master's chrome** — green bar, logo, footer, or the corner-triangle motif. Use the official master.
+- ❌ **Don't use #F5F7F7 as a content-slide background.** White only.
 - ❌ **Don't put accent lines under titles** — whitespace is enough.
 - ❌ **Don't add full-width colored ribbons or stripes** unless they're the official thin green top bar.
 

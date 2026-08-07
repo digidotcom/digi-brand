@@ -1,7 +1,7 @@
 {
   "name": "digi-brand",
-  "description": "Digi International's brand applied to the artifacts people actually make: decks and documents. Carries the official palette and typography as a single source of truth, the official PowerPoint template, Word styling, and reusable blueprints for recurring Digi document genres including Product Change Notices.",
-  "version": "2026.07.31-1",
+  "description": "Digi International's brand applied to the artifacts people actually make: decks and documents. Carries the official palette and typography as a single source of truth, the two official 2024 PowerPoint masters (Public and Confidential, chosen by classification), the vendored Source Sans fonts, Word styling, and reusable blueprints for recurring Digi document genres including Product Change Notices.",
+  "version": "2026.08.07-1",
   "author": {
     "name": "Josh Flinn",
     "email": "joshua.flinn@digi.com"

@@ -50,7 +50,7 @@ baseline are constant regardless of what is being funded.
 ## Layout notes
 
 Same template mechanics as the other internal blueprints
-(`digi-template.pptx`, zones from [../../visuals.md](../../visuals.md)).
+(`2024-Digi-Confidential-PPT-Template.potx`, zones from [../../visuals.md](../../visuals.md)).
 Slide 5's model and slide 7's scenarios favor stat-callout pairs
 (status quo vs. proposed, base case vs. downside) over a dense table — the
 reviewer should be able to read the comparison at a glance, with the full

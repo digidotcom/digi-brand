@@ -12,12 +12,22 @@ license: MIT
 > orange `#CC6033`, ice blue `#E2F6FF`, medium gray `#56565A`, followed-link
 > blue `#00B7FF`. Fonts: Source Sans Pro, falling back to Source Sans 3 or Arial.
 >
-> **Template location.** The official template is at
-> `${CLAUDE_PLUGIN_ROOT}/assets/digi-template.pptx`.
+> **Template location.** Two official 2024 masters, chosen by classification —
+> never assume one:
+> - `${CLAUDE_PLUGIN_ROOT}/assets/2024-Digi-Public-PPT-Template.potx` —
+>   anything leaving Digi: customer sales pitches, customer QBRs,
+>   webinars/conference sessions, published or partner collateral not under NDA.
+> - `${CLAUDE_PLUGIN_ROOT}/assets/2024-Digi-Confidential-PPT-Template.potx` —
+>   anything internal: leadership and board reviews, business cases and funding
+>   requests, all-hands/town halls, project kickoffs, internal launch enablement
+>   (support/channel/sales), roadmaps, pre-announcement PCN material.
+>
+> **Default when unclear: CONFIDENTIAL.** Mislabeling internal material PUBLIC
+> is the costly error; the reverse is merely conservative.
 
 # Digi International PowerPoint Skill
 
-Creates on-brand Digi presentations. **Always edit the bundled official template.** Its slide master provides the green top bar, DIGI logo, footer, brand fonts, and the correct 10 × 5.625" slide geometry for free. This is the only supported path, including for single one-off slides.
+Creates on-brand Digi presentations. **Always edit the bundled official master for the deck's classification** (see Template location above). Its slide master provides the green top bar, DIGI logo, the classification footer, brand fonts, and the correct 10 × 5.625" slide geometry for free. This is the only supported path, including for single one-off slides.
 
 ---
 
@@ -91,6 +101,7 @@ const digiChartColors = ["91D46C", "1F7FA5", "1B4965", "CC6033", "00B7FF", "5656
 
 - **Primary**: Source Sans Pro
 - **Fallback**: Source Sans 3 (Google Fonts), then Arial
+- **Fonts are NOT embedded in the masters.** A machine without them installed renders every deck in a silent fallback face. Both naming generations are vendored in the plugin's `assets/fonts/` directory — install steps in `${CLAUDE_PLUGIN_ROOT}/assets/README.md`.
 - **Headings**: Source Sans Pro Bold or Semibold
 - **Body**: Source Sans Pro Regular
 - **Monospace (for code/prompts)**: Consolas
@@ -117,37 +128,34 @@ const digiChartColors = ["91D46C", "1F7FA5", "1B4965", "CC6033", "00B7FF", "5656
 │            Title in #1B4965 or #3F4245              │
 │                                                     │
 │            Body content goes here.                  │
-│            NO triangles. NO ribbons. Just space.    │
+│            Mostly whitespace.                       │
 │                                                     │
-│                                                     │
+│                              green triangle motif ◢ │
 │ ▌DIGI▌                                              │
-│  logo   2  |  CONFIDENTIAL  |  © DIGI INTERNATIONAL │  ← Bottom-left
+│  logo   {#}  |  classification footer from master   │  ← Bottom-left
 └─────────────────────────────────────────────────────┘
 ```
 
 **Critical rules:**
 - **Background is white.** Not light gray.
-- **No diagonal triangles or ribbons on content slides.** They appear only on title/closing slides.
+- **All decoration comes from the master's layouts** — the green bar, logo, footer, and the layered green corner-triangle motif some layouts carry bottom-right. **Never hand-draw any of it**, and never add your own ribbons or accents on top.
 - **Top green bar runs the full width** at the very top edge (~0.1" tall).
 - **DIGI logo sits bottom-left**, with footer text immediately to its right.
-- **Footer format**: `{slideNum}  |  CONFIDENTIAL  |  © DIGI INTERNATIONAL INC.` — page number bold, separators are pipes with double-space padding.
+- **The footer comes from the chosen master's layouts.** It is never retyped or hand-built — the Public master stamps PUBLIC, the Confidential master stamps CONFIDENTIAL. If the footer says the wrong classification, you picked the wrong master; switch masters, don't edit the footer.
 
 ---
 
 ## Slide Anatomy (Title & Closing Slides)
 
-Title and "Thank You" slides use a more dramatic treatment:
+The official 2024 title layout ("1_Generic Deck Title") is restrained, not photographic:
 
-- **Full-bleed photo background** (urban skyline or industry-relevant imagery)
-- **Dark gradient overlay** on the left ~60% of the slide for text legibility
-- **White DIGI logo** top-left
-- **Title** in Digi Green (#91D46C), large (60pt+)
-- **Subtitle** in white bold
-- **Name/team/date** in Teal (#1F7FA5)
-- **Bottom-right**: solid green parallelogram/diagonal cut (NOT layered triangles — it's one clean angled shape)
-- **Optional top motif**: flowing wave of green and teal binary digits ("0"s and "1"s) — the Digi "data flow" signature
+- **Light gray (#F5F7F7) diagonal panel** over white — no photo, no gradient
+- **DIGI logo** top-left
+- **Title** placeholder at 0.47, 1.4 (navy/dark, from the theme)
+- **Name/date** placeholder below it in Medium Gray
+- **Bottom-right**: the layered green triangle motif, supplied by the layout
 
-This is hard to build from scratch with pptxgenjs. **Use the template.**
+All of it is layout chrome. **Use the master's title layout; edit only the placeholder text.** There is no bundled Thank You slide — reuse the title layout for a closing slide if the deck needs one.
 
 ---
 
@@ -155,10 +163,9 @@ This is hard to build from scratch with pptxgenjs. **Use the template.**
 
 These are mistakes a prior version of this skill made — don't repeat them:
 
-- ❌ **Don't use light gray (#F5F7F7) as a slide background.** Content slides are white.
-- ❌ **Don't add triangles or diagonal accents to content slides.** Save them for title/closing.
-- ❌ **Don't stack "layered triangles."** The actual brand mark is a single solid green parallelogram on title slides only.
-- ❌ **Don't manually draw the green top bar and logo if you can use the template** — the slide master does it automatically and consistently.
+- ❌ **Don't use light gray (#F5F7F7) as a content-slide background.** Content slides are white; the light gray panel belongs to the title layout only.
+- ❌ **Don't hand-draw triangles, bars, or any master chrome.** The layouts supply the green bar, logo, footer, and the corner-triangle motif; adding your own always mismatches.
+- ❌ **Don't invent decoration the layout doesn't have** — no ribbons, no accent stripes, no photo backgrounds on title slides.
 - ❌ **Don't default to the older navy ending in 64.** It's `#1B4965`.
 - ❌ **Don't use Arial or Calibri as the primary font.** It's Source Sans Pro.
 - ❌ **Don't fill the slide with decoration.** Digi's actual brand is restrained — most of the slide is whitespace for content.
@@ -173,7 +180,7 @@ Unpack the template, inject brand-styled shapes into the content slide (`slide2.
 
 ## Reference Files
 
-- `${CLAUDE_PLUGIN_ROOT}/assets/digi-template.pptx` — Official Digi brand template. **Start here for every slide, one or many.**
+- `${CLAUDE_PLUGIN_ROOT}/assets/2024-Digi-Public-PPT-Template.potx` and `.../2024-Digi-Confidential-PPT-Template.potx` — the official Digi masters. **Start from the one matching the deck's classification, for every slide, one or many.**
 - `references/template-workflow.md` — How to edit the bundled template (unpack/edit/repack), including the single one-off slide recipe
 - `references/visuals.md` — Screenshots, placeholders, and generated graphics: the decision rule, image zones, and the two scripts. Read when a slide needs more than text.
 - `references/deck-blueprints/` — Blueprints for the decks Digi ships across every function: `internal/` (launch enablement, leadership review, business case, all-hands, project kickoff) and `customer-facing/` (sales pitch, customer QBR, webinar/conference). Slide archetypes + voice + visuals per audience. Start at its README for the find-yours-by-role table.
@@ -189,8 +196,8 @@ Before declaring a slide done, verify:
 
 - [ ] Background is white (not light gray)
 - [ ] Green top bar is present and full-width
-- [ ] No triangles on content slides
-- [ ] Footer follows the `{#}  |  CONFIDENTIAL  |  © DIGI INTERNATIONAL INC.` format
+- [ ] No hand-drawn chrome — bars, triangles, logo, and footer all come from the master's layouts
+- [ ] Footer is the chosen master's own (never retyped), and its classification matches the audience — PUBLIC for external, CONFIDENTIAL for internal
 - [ ] DIGI logo is bottom-left (or the master is providing it)
 - [ ] Source Sans Pro everywhere except code blocks (Consolas)
 - [ ] Navy is `#1B4965` — check the last digit, the older value ended in 64
