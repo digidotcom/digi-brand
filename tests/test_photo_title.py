@@ -7,11 +7,9 @@ Two things are easy to break silently here:
    layout shapes in OOXML), which destroys the design without erroring. The
    photograph has to arrive as a slide background instead.
 
-2. The four title photographs must SHIP. Digi owns them outright (confirmed by
-   Taylor Salentine, 2026-08-07), and a plugin that makes every employee
-   recover images by hand is not a plugin. They are files in assets/photos/,
-   not embedded in the masters — the masters stay photograph-free because the
-   photo is applied per deck as a slide background.
+2. The four title photographs must ship, as files in assets/photos/ rather than
+   embedded in the masters. The masters stay photograph-free because the photo
+   is applied per deck as a slide background.
 """
 import subprocess
 import zipfile
@@ -63,8 +61,9 @@ def test_photo_title_has_no_picture_placeholder():
 
 
 def test_masters_ship_no_photographs():
-    # docProps/thumbnail.jpeg is Office's own preview and predates our changes;
-    # anything else photographic would be third-party imagery we cannot publish.
+    # The title photograph is a per-deck slide background, so no photographic
+    # media belongs in the template. docProps/thumbnail.jpeg is Office's own
+    # preview and is exempt.
     for potx in MASTERS:
         z = zipfile.ZipFile(potx)
         photos = [
@@ -84,8 +83,8 @@ EXPECTED_PHOTOS = {
 
 
 def test_the_four_title_photographs_ship():
-    # A plugin whose photo library has to be reassembled by hand on every
-    # machine is not a plugin. Digi owns these outright, so they ship.
+    # The library must be present on install; nothing should need assembling
+    # by hand on each machine.
     tracked = subprocess.run(
         ["git", "ls-files", "assets/photos"],
         cwd=ROOT, capture_output=True, text=True, check=True,
@@ -130,9 +129,8 @@ def test_graft_tool_documents_the_zorder_reason():
 
 
 def test_graft_tool_reads_nothing_outside_the_repo():
-    # This plugin is distributed across Digi. A build step that reads someone's
-    # home directory is not reproducible by anyone else, so every input the
-    # graft needs is versioned in assets/photo-title-layout/.
+    # A build step that reads a personal filesystem is not reproducible by
+    # anyone else, so every input the graft needs is versioned in-repo.
     src = TOOL.read_text()
     for smell in ["Path.home()", "~/Downloads", "os.path.expanduser"]:
         assert smell not in src, f"graft tool must not reference {smell}"

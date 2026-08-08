@@ -54,7 +54,7 @@ Follow the QA flow in `<pptx>/SKILL.md` — convert to images and verify:
 
 ## Layout inventory — the nine you use
 
-The masters carry 35 layouts. **Nine are in scope; the rest are deliberately not documented.** They are not broken — they are a menu built for a person dragging boxes in PowerPoint, and most differ from one another only by a small green nub and a placeholder arrangement you can produce at any coordinate. Every layout listed here earns its place either by drawing brand artwork that cannot be recreated, or by being one a Digi colleague expects to see when they open the deck and edit it themselves. Selected by Josh Flinn, 2026-08-07, from rendered pixels.
+The masters carry 35 layouts. **Nine are in scope; the rest are intentionally undocumented.** A layout qualifies on one of two grounds: it draws brand artwork that cannot be reproduced by hand, or it is one a Digi colleague expects to find when they open the deck to edit it. The undocumented layouts fail both — most differ only by a small green tab and a placeholder arrangement reproducible at any coordinate.
 
 Verified facts, so you don't re-derive them:
 - Layout **names, numbering, and all content-placeholder geometry are identical in BOTH masters**. The only difference is footer chrome: the Confidential master's slide-number/footer placeholders are `idx="10"`/`idx="11"`, the Public master's are `idx="2"`/`idx="3"`, shifted 0.10" right. You never touch those, so nothing to handle — just don't hardcode footer idx if you copy footer `<p:sp>` elements between masters.

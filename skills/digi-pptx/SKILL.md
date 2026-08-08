@@ -43,7 +43,7 @@ Creates on-brand Digi presentations. **Always edit the bundled official master f
 
 There is one path: **edit the template.** See [references/template-workflow.md](references/template-workflow.md).
 
-**Why there is no "build from scratch" option.** Building a deck from a blank pptxgenjs canvas was previously offered for one-off slides. It was removed because the output never matched a real Digi slide and always needed manual reformatting into the template afterward. Two reasons it can't match:
+**Why there is no "build from scratch" option.** A deck built on a blank pptxgenjs canvas cannot match a real Digi slide, and always needs manual reformatting into the template afterward. Two reasons:
 - A blank pptxgenjs deck has **no slide master**, so the green bar, logo, and footer are absent (or hand-drawn inconsistently).
 - The slide master's true geometry is **10 × 5.625"**, not the 13.33 × 7.5" a from-scratch build defaults to, so every coordinate is off.
 

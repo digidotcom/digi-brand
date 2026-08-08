@@ -25,16 +25,15 @@ background via `skills/digi-pptx/scripts/set_title_photo.py`, which means:
 
 WHY BACKGROUND AND NOT A PICTURE PLACEHOLDER
 --------------------------------------------
-A picture placeholder was tried first and does not work. In OOXML the render
-order is slide background -> master shapes -> layout shapes -> slide shapes.
-A placeholder filled on the SLIDE therefore draws ABOVE the layout's scrim,
-logo, and green triangles, hiding all of them — verified by render. Placeholder
-inheritance supplies geometry, never z-order. The slide background is the only
-surface that sits BENEATH layout chrome, which is exactly where the photograph
-has to be for the translucent scrim to read over it.
+OOXML renders in the order: slide background -> master shapes -> layout shapes
+-> slide shapes. A picture placeholder filled on the slide therefore draws
+ABOVE the layout's scrim, logo, and green triangles and hides all of them —
+placeholder inheritance supplies geometry, never z-order. The slide background
+is the only surface beneath layout chrome, which is where the photograph must
+sit for the translucent scrim to read over it.
 
-So the layout deliberately carries NO picture placeholder: one would invite a
-fill that silently destroys the design. `tests/test_photo_title.py` pins that.
+The layout therefore carries NO picture placeholder; one would invite a fill
+that silently destroys the design. `tests/test_photo_title.py` pins that.
 
 USAGE
 -----

@@ -50,8 +50,9 @@ def test_green_never_passes():
 def test_no_role_recommends_a_color_that_fails_as_text():
     """The role map must not assign a text role to a color the table fails.
 
-    The spine previously listed #00B7FF (2.28:1) under "Followed links", which
-    is a text role, while its own table rated that color unreadable.
+    A color can be listed under a text role (e.g. "Followed links") while the
+    contrast table rates it unreadable as body text — #00B7FF is 2.28:1. The
+    two halves of the spine have to agree.
     """
     failing = {
         hex_color for hex_color, _, _, passes_body, _ in table() if not passes_body
