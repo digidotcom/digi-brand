@@ -10,7 +10,7 @@ The bundled official masters have a proper PowerPoint slide master that automati
 
 ### 1. Choose the master by classification, copy it to a working location
 
-Pick per `SKILL.md` → Template location: **PUBLIC** for anything leaving Digi, **CONFIDENTIAL** for anything internal, **CONFIDENTIAL when unclear**. The footer classification comes from this choice — it is never typed by hand.
+Pick per `SKILL.md` → Template location: **PUBLIC** for anything leaving Digi, **CONFIDENTIAL** for anything internal. **If it is unclear, ask** — do not guess; only fall back to CONFIDENTIAL when there is no one to ask (headless or scheduled run), and say so in the result. The footer classification comes from this choice — it is never typed by hand.
 
 ```bash
 cp ${CLAUDE_PLUGIN_ROOT}/assets/2024-Digi-Confidential-PPT-Template.potx /home/claude/working-deck.pptx

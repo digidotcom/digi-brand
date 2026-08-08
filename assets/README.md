@@ -4,7 +4,7 @@
 
 Two masters, identical except for the classification footer their layouts
 stamp. The deck's audience picks the file — see `skills/digi-pptx/SKILL.md`
-(default when unclear: Confidential):
+(when the audience is unclear, ask rather than guess):
 
 - `2024-Digi-Public-PPT-Template.potx` — footer `PUBLIC`; anything leaving Digi.
 - `2024-Digi-Confidential-PPT-Template.potx` — footer `CONFIDENTIAL`; anything internal.

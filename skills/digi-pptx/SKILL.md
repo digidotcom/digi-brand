@@ -22,8 +22,16 @@ license: MIT
 >   requests, all-hands/town halls, project kickoffs, internal launch enablement
 >   (support/channel/sales), roadmaps, pre-announcement PCN material.
 >
-> **Default when unclear: CONFIDENTIAL.** Mislabeling internal material PUBLIC
-> is the costly error; the reverse is merely conservative.
+> **When it is unclear, ASK — do not guess.** If the request does not make the
+> audience obvious, ask outright whether the deck is public or confidential
+> before building. It is one question, the requester always knows the answer,
+> and the footer it drives is stamped on every slide. Guessing is what puts the
+> wrong classification in front of a customer or a board.
+>
+> **Only if you genuinely cannot ask** — a headless, scheduled, or dispatched
+> run with no one to answer — build CONFIDENTIAL and say so plainly in your
+> result, so a human can re-stamp it. Mislabeling internal material PUBLIC is
+> the costly error; the reverse is merely conservative.
 
 # Digi International PowerPoint Skill
 

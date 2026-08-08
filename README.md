@@ -32,7 +32,7 @@ skill works on its own without the rest of the plugin.
   Every other skill reads this one.
 - **digi-pptx** — Digi presentations built on the two official 2024 masters,
   chosen by classification (Public for external audiences, Confidential for
-  internal — Confidential when unclear). The slide master supplies the green
+  internal; asks when unclear rather than guessing). The slide master supplies the green
   bar, logo, classification footer, fonts, and correct geometry.
   Includes blueprints for the recurring launch-training genre (support, channel,
   sales) and a generator for on-brand graphics (requires a `GEMINI_API_KEY`
