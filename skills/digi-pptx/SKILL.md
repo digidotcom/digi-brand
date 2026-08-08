@@ -75,7 +75,7 @@ A content slide that is just a title and bullets is a weak slide. Before filling
 
 Two bundled scripts do the heavy lifting (details + zone geometry in `references/visuals.md`):
 - `scripts/gen_graphic.py` — generate a Digi-styled graphic. The prompt is a **subject**; `--style` picks the look (`illustration` = soft 3D, the default house style; `photo` = real scene; `lineart` = flat icons), always with **no text in the image**, so graphics look like one family. Generation costs roughly 6.5 cents per image, and output carries a C2PA/SynthID "AI-generated" watermark. (Style is chosen from rendered samples, not a description — see `references/visuals.md`.)
-- `scripts/place_image.py` — drop any image (generated or a real screenshot) into an unpacked slide at a named zone (`right-half`, `left-half`, `hero`, `full-band`, `square`) or explicit geometry. Handles media + content-type + relationship + `<p:pic>`. Use `--fit` for real screenshots so they aren't stretched.
+- `scripts/place_image.py` — drop any image (generated or a real screenshot) into an unpacked slide at a named zone (`left-half`, `right-half`, `hero`, `full-band`, `square`) or explicit geometry. Handles media + content-type + relationship + `<p:pic>`. Use `--fit` for real screenshots so they aren't stretched. **There is no default zone** — pick by the image's shape, and don't put every visual in the same box (rule in `references/visuals.md`).
 
 **Don't generate to decorate, and don't generate fakes** (no fake screenshots, charts, or logos). Generated images are for concepts only.
 

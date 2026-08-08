@@ -47,11 +47,26 @@ the image fills the box with no distortion or letterbox.
 
 | Zone | x, y | w, h | Aspect | Use |
 |---|---|---|---|---|
-| `right-half` | 5.15, 1.30 | 4.30, 3.45 | 4:3 | Image right, text left (most common) |
 | `left-half` | 0.38, 1.30 | 4.30, 3.45 | 4:3 | Image left, text right |
+| `right-half` | 5.15, 1.30 | 4.30, 3.45 | 4:3 | Image right, text left |
 | `hero` | 1.50, 1.15 | 7.00, 3.94 | 16:9 | One centered visual, little/no text |
 | `full-band` | 0.38, 1.15 | 9.15, 3.92 | 21:9 | Wide band under the title |
 | `square` | 3.25, 1.30 | 3.50, 3.50 | 1:1 | A single centered icon/diagram |
+
+**There is no default zone. Pick from the image, not from habit.** The table is
+not ranked, and an image on the right is not the house style — a deck where
+every visual sits in the same box reads as one slide repeated. Choose by what
+the visual actually is:
+
+- **Wide or landscape** (dashboards, topology diagrams, timelines, wide tables)
+  → `full-band`. Squeezing these into a half kills the detail.
+- **Tall or portrait** (a phone screen, a stacked list, a single UI panel)
+  → `left-half` or `right-half`.
+- **The slide's whole point, with little text** → `hero`.
+- **A single icon or small diagram** → `square`.
+- **Anything else** → `left-half` and `right-half` are equally correct; alternate
+  them across consecutive slides so a run of half-image slides has rhythm
+  instead of a fixed gutter.
 
 For anything off-grid, pass explicit `--x --y --w --h` (inches) instead of `--zone`.
 
@@ -60,7 +75,7 @@ For anything off-grid, pass explicit `--x --y --w --h` (inches) instead of `--zo
 ```bash
 python scripts/gen_graphic.py \
   --prompt "an edge router at a remote site sending telemetry up to a cloud, a laptop reaching securely back down" \
-  --out work/graphic.png --zone right-half          # default --style illustration
+  --out work/graphic.png --zone left-half           # default --style illustration
 
 python scripts/gen_graphic.py --style photo \
   --prompt "a field technician at a remote cell-tower site using a laptop" \
@@ -96,7 +111,7 @@ add the relationship, inject the `<p:pic>`.
 
 ```bash
 # generated graphic — made at the zone's aspect, so it fills the box exactly:
-python scripts/place_image.py --unpacked unpacked/ --slide 2 --image work/graphic.jpg --zone right-half
+python scripts/place_image.py --unpacked unpacked/ --slide 2 --image work/graphic.jpg --zone left-half
 
 # a real screenshot whose aspect differs — --fit preserves aspect, centers it:
 python scripts/place_image.py --unpacked unpacked/ --slide 4 --image work/shot.png --zone full-band --fit
