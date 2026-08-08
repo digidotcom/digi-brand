@@ -3,16 +3,34 @@
 Photographs for the **Photo Deck Title** layout. Applied as a slide background
 by `skills/digi-pptx/scripts/set_title_photo.py`.
 
-## The image files are deliberately NOT in this repo
+## The image files are NOT in this repo — pending a provenance answer
 
-`.gitignore` excludes every image in this directory. This repo is public, and
-these are **third-party licensed stock photographs**. A stock license lets Digi
-use an image in Digi materials; it does not let us publish the image file where
-anyone can download it, which is exactly what committing it here would do. That
-restriction is the photographer's and the agency's, not Digi's — so it is not
-Digi's to waive.
+`.gitignore` excludes every image here. This is a **hold, not a known
+restriction**, and the distinction matters:
 
-Everything else about the feature is in the repo. Only the pixels are missing.
+**What was verified.** The four files carry no rights metadata whatsoever —
+EXIF-only APP1 segments (114–138 bytes), an empty 54-byte Photoshop IPTC stub,
+no XMP packet, no copyright/creator/credit/licensor string. All four were
+processed through Photoshop and stripped, which is routine for template
+artwork. `offshore-platform.jpeg` has a Nikon ICC profile, so it is
+camera-original rather than a rendered composite.
+
+**What that proves: nothing about licensing.** A stock download and an in-house
+Digi shoot are indistinguishable after Photoshop stripping. We do not know
+whether Digi owns these outright or licensed them from an agency.
+
+**Why we hold anyway.** This repo is public and git history is effectively
+permanent — deleting a file later does not un-publish it. Publishing an asset
+of unknown provenance is the one move that cannot be walked back, so waiting
+costs nothing and guessing could cost a lot.
+
+**How to resolve it:** ask Digi marketing (the brand/template owner) where the
+2024 template's title photographs came from. If Digi owns them, commit them and
+delete this section. If they are licensed, the license terms decide whether an
+internal repo is in scope.
+
+Everything else about the feature is in the repo. Only the pixels are missing,
+and any image works in their place.
 
 ## Populating the library
 

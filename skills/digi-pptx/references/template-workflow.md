@@ -99,7 +99,7 @@ python3 scripts/set_title_photo.py --list          # what's available
 python3 scripts/set_title_photo.py --unpacked unpacked/ --slide 1 --image work/site.jpg
 ```
 
-Pick a photograph whose subject sits on the **right** — the scrim covers the left, and a busy left side fights the title. With no photo set the layout renders as scrim-over-white, which is a valid if plain fallback. The library is `assets/photos/` and is **not in git** (third-party licensed stock; see `assets/photos/README.md` to populate it).
+Pick a photograph whose subject sits on the **right** — the scrim covers the left, and a busy left side fights the title. With no photo set the layout renders as scrim-over-white, which is a valid if plain fallback. The library is `assets/photos/` and is **not in git** — held out pending a provenance answer, not a known restriction; see `assets/photos/README.md` for status and how to populate it locally.
 
 ### 2 — `1_Generic Section Divider`
 

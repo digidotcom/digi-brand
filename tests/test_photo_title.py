@@ -7,9 +7,10 @@ Two things are easy to break silently here:
    layout shapes in OOXML), which destroys the design without erroring. The
    photograph has to arrive as a slide background instead.
 
-2. No photograph may ship inside the masters or the repo. The stock imagery is
-   third-party licensed — usable in Digi decks, not ours to redistribute from a
-   public repo.
+2. No photograph may ship inside the masters or the repo *while this repo is
+   public and the title imagery's provenance is unverified*. The files carry no
+   rights metadata either way, and git history is permanent, so the guard holds
+   until Digi marketing confirms ownership. See assets/photos/README.md.
 """
 import subprocess
 import zipfile

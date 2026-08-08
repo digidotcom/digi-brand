@@ -15,8 +15,8 @@ matters: the old layout EMBEDDED its photograph as a fixed `<p:pic>`, locking
 every deck to one stock image. Here the photograph is REMOVED entirely and the
 deck supplies it as a **slide background** (`tools/set_title_photo.py`), so:
 
-  * no photograph ships inside the .potx — this repo is public, and the stock
-    photography is third-party licensed, not Digi's to redistribute;
+  * no photograph ships inside the .potx — the title imagery is of unverified
+    provenance and this repo is public (see assets/photos/README.md);
   * any image works — one of the four library photos, or a custom one;
   * with no photo set, the layout renders as the scrim over white. Nothing breaks.
 

@@ -25,9 +25,10 @@ place_image.py.
 
     python3 set_title_photo.py --list        # show the library
 
-The library lives in `assets/photos/` and is NOT in git — those are
-third-party licensed stock images, fine to use in Digi decks, not ours to
-redistribute from a public repo. See `assets/photos/README.md` to populate it.
+The library lives in `assets/photos/` and is NOT in git — the title imagery's
+provenance is unverified and this repo is public, so it is held out pending an
+answer from Digi marketing. See `assets/photos/README.md` for status and how to
+populate it locally. Any image works in their place.
 """
 from __future__ import annotations
 
