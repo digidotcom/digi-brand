@@ -89,29 +89,17 @@ Pick by what the slide's content IS:
 **2 — `1_Generic Section Divider`.** Large light-gray diagonal panels fill the slide (denser than the title look), big title mid-left, optional one-line subhead below, logo bottom-left, green triangle bottom-right. Use at every topic change in a deck of any length — it is the visual breather that stops the bullets-blur.
 - title (inherited): 0.50, 1.23, 6.66 × 2.30 · subhead body `idx="12"`: 0.50, 3.70, 6.66 × 1.10
 
-### Bullets (layouts 3–4) — plain bulleted prose
+### Text layouts (3/4 Bullets · 5/6 Subhead + bullets · 21/22 Generic) — styling, not capability
 
-Green top bar, bold title top-left, full-width bulleted body, green corner triangle bottom-right. The workhorse — and the layout every deck previously over-used. Fine for genuinely list-shaped content; if the slide is really a comparison, a product shot, or a stat, use that family instead.
-- **3 (1-line):** title 0.38, 0.38, 9.15 × 0.42 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22
-- **4 (2-line):** title 0.38, 0.38, 9.15 × 0.73 · body `idx="12"` 0.38, 1.17, 9.15 × 3.90
+Pure text arrangements, no branded decoration beyond the standard chrome. A text box can be placed at any coordinate on any layout, so these buy **inherited text styling**, not placement capability: 3/4 style the body as a bullet list (the workhorse every deck previously over-used); 5/6 style the first outline level as an **unbulleted subhead** (lead with the takeaway, bullets from level 2); 21/22 leave the body plain, drop the corner triangle, and are the **free-form canvas** — shape-built diagrams, stat callouts, card grids, and the named image zones from `visuals.md` belong here (or on Bullets), never on a picture-placeholder layout.
+- All six share one geometry: title 0.38, 0.38, 9.15 × 0.42|0.73 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22 (2-line: 0.38, 1.17, 9.15 × 3.90). One quirk: layout 6 narrows title and body to **9.00** wide — the template's own inconsistency, not a typo.
 
-### Subhead + bullets (layouts 5–6) — takeaway line, then support
+### Tab-labeled text (layouts 7–12 left tab · 13/14 right tab)
 
-Same skeleton as Bullets, but the body's first outline level is styled as an **unbulleted subhead** (bullets start at level 2). Lead with the one-sentence takeaway, indent the evidence under it. Renders like Bullets otherwise.
-- **5 (1-line):** title 0.38, 0.38, 9.15 × 0.42 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22
-- **6 (2-line):** title 0.38, 0.38, **9.00** × 0.73 · body `idx="12"` 0.38, 1.17, **9.00** × 3.90 (the 9.00 width is the template's own quirk, not a typo)
-
-### Left-tab text (layouts 7–12) — labeled text slides
-
-A **green ribbon tab across the top-left** carries a short category/eyebrow label (white text on green, `idx="13"`); title and body are indented to x 1.0 under it. Variants add **teal trapezoid tabs on the bottom edge** for secondary labels (source, product line, section marker). Use when slides belong to a labeled track ("SECURITY", "ROADMAP") and the deck should show it.
-- **7/8 (1-/2-line):** top tab `idx="13"` 0.71, 0.05, 2.84 × 0.22 · title 1.00, 0.62, 8.54 × 0.42|0.73 · body `idx="14"` 1.00, 1.10, 8.54 × 3.97 | 1.00, 1.40, 8.54 × 3.66
-- **9/10:** adds bottom-right teal tab `idx="15"` 7.12, 5.40, 2.31 × 0.22
-- **11/12:** adds a second bottom tab `idx="16"` 4.02, 5.39, 2.31 × 0.22
-
-### Right-tab text (layouts 13–14) — label on the right instead
-
-Same idea, mirrored: green tab sits top-**right** (`idx="13"` 6.31, 0.03, 2.84 × 0.22), title/body stay at the normal full-width position (not indented). Use when the eyebrow label should not push the title right.
-- title 0.38, 0.38, 9.15 × 0.42|0.73 · body `idx="14"` 0.38, 0.85, 9.15 × 4.22 | 0.38, 1.17, 9.15 × 3.90
+A **green ribbon tab over the top edge** carries a short category/eyebrow label (white text on green). Use when slides belong to a labeled track ("SECURITY", "ROADMAP") and the deck should show it. Left-tab variants add **teal trapezoid tabs on the bottom edge** for secondary labels (source, product line, section marker).
+- **7/8 (left tab):** tab `idx="13"` 0.71, 0.05, 2.84 × 0.22 · title indented to 1.00, 0.62, 8.54 × 0.42|0.73 · body `idx="14"` 1.00, 1.10, 8.54 × 3.97 | 1.00, 1.40, 8.54 × 3.66
+- **9/10:** adds bottom-right teal tab `idx="15"` 7.12, 5.40, 2.31 × 0.22 · **11/12:** adds a second bottom tab `idx="16"` 4.02, 5.39, 2.31 × 0.22
+- **13/14 (right tab):** tab sits top-**right** `idx="13"` 6.31, 0.03, 2.84 × 0.22; title/body stay at the normal full-width position (title 0.38, 0.38, 9.15 × 0.42|0.73 · body `idx="14"` 0.38, 0.85, 9.15 × 4.22 | 0.38, 1.17, 9.15 × 3.90). Use when the label should not push the title right.
 
 ### Left tab + 2 content (layouts 15–20) — sidebar + main
 
@@ -119,12 +107,6 @@ Green top-left tab, then **two content areas**: a narrow left column (2.5" wide 
 - **15/16:** tab `idx="13"` 0.41, 0.04, 2.84 × 0.22 · left `idx="14"` 0.60, 0.78, 2.50 × 3.50 · title 3.80, 0.38, 6.00 × 0.42|0.73 · main `idx="15"` 3.80, 0.85, 6.00 × 4.22 | 3.80, 1.17, 6.00 × 3.90
 - **17/18:** same slots renumbered — left `idx="15"`, main `idx="16"`, plus bottom-right tab `idx="17"` 7.12, 5.39, 2.31 × 0.22
 - **19/20:** left `idx="16"`, main `idx="17"`, bottom tabs `idx="19"` 4.02, 5.39 and `idx="20"` 7.12, 5.39 (each 2.31 × 0.22)
-
-### Generic slide (layouts 21–22) — the free-form canvas
-
-Green bar + title + one full-width **plain** body (no bullet styling), and **no corner triangle** — the cleanest canvas in the set. This is where custom-composed content belongs: shape-built diagrams, stat callouts, card grids, and the named image zones from `visuals.md`. If you are placing images by zone, do it here (or on Bullets), not on a picture-placeholder layout.
-- **21 (1-line):** title 0.38, 0.38, 9.15 × 0.42 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22
-- **22 (2-line):** title 0.38, 0.38, 9.15 × 0.73 · body `idx="12"` 0.38, 1.17, 9.15 × 3.90
 
 ### Product slide (layouts 23–24) — native full-height picture, right
 
