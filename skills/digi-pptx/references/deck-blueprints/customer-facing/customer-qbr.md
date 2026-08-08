@@ -21,13 +21,13 @@ catch early.
 |---|---|---|---|---|
 | 1 | **Title** | Customer name, "Quarterly Business Review," period covered, date — no Digi overview | template title | — |
 | 2 | **This quarter, in your numbers** | Open with outcomes in the customer's own metrics: uptime, sites deployed, incidents avoided, hours saved | stat callouts, text | their numbers, not our activity |
-| 3 | **Where we did not deliver** | Every open issue, missed commitment, and unresolved escalation, each with an owner and a date | issue + owner + date table, text | direct, no minimizing language |
+| 3 | **Where we did not deliver** | Every open issue, missed commitment, and unresolved escalation, each with an owner and a date | comparison-table layout (33/34): issue / owner / date | direct, no minimizing language |
 | 4 | **Usage and adoption** | How the deployed capability is actually being used day to day, not just that it was installed | stat callouts + **illustration** | factual, "here's what's actually running" |
 | 5 | **Support and reliability** | Tickets closed, resolution time, health trend over the quarter | stat callouts, text | factual, verifiable |
 | 6 | **Risk and roadmap exposure** | End-of-life dates, firmware currency, security posture — what needs attention before it becomes an incident | bullets + **illustration** | plain, names the risk without alarm |
 | 7 | **Value realized** | What the deployment is worth against what it costs, in the sponsor's terms | stat callout, text | plain numbers, no adjectives |
 | 8 | **What's changing next quarter** | The plan for every open item from slide 3: what happens, by when, who owns it | action list, text | "here's what we're doing about it" |
-| 9 | **A capability you're not using yet** | Introduce one new capability, only after the value slides have landed — see cross-reference below | short line + **screenshot placeholder** | plain, no pitch energy |
+| 9 | **A capability you're not using yet** | Introduce one new capability, only after the value slides have landed — see cross-reference below | short line + **screenshot placeholder** (gray-panel layout 25/26) | plain, no pitch energy |
 | 10 | **What that would mean for you** | The new capability translated into this customer's outcomes, same as slide 2's frame | bullets + stat callout | same numbers language as slide 2 |
 | 11 | **Commitments, both directions** | What Digi will do by when, and what the customer owes to unblock it | two-column action list, text | "here's what each of us owes the other" |
 | 12 | **Open discussion** | Space for the questions this deck did not anticipate | prompt, text | "what did we miss" |

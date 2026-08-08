@@ -22,7 +22,7 @@ answers. If a slide cannot be remembered, it will not be used.
 | 6 | **Why it works on a bad day** | The 2-3 architectural choices that matter, in order, as differentiators | numbered bullets + **illustration** (architecture) | "in order:" |
 | 7 | **Two anchors to memorize** | The 2 things a rep must retain to pitch at all | two bold anchors, text | "if you remember these two things…" |
 | 8 | **The competitors to know** | Name the 2-3 real competitors and their one shared weakness | per-competitor rows + **illustration** | named, factual |
-| 9 | **Where X wins** | The capability comparison table: Digi vs Others | comparison table (text) | check/x, terse |
+| 9 | **Where X wins** | The capability comparison table: Digi vs Others | comparison-table layout (33/34) | check/x, terse |
 | 10 | **How it's packaged** | The commercial story: included vs add-on, one line item, who to see before quoting | text | "no upsell motion required" |
 | 11 | **What to ask your prospect** | The 5 discovery questions that surface the pain | numbered questions, text | verbatim questions |
 | 12 | **The top objections** | The 3-4 partner-side objections with the reframe | objection + reframe pairs, text | "let's talk about your traffic flow" |

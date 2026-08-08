@@ -17,7 +17,7 @@ every slide toward drawing that line.
 | 1 | **Title** | Product, "What Support Needs to Know," org, date | template title slide | — |
 | 2 | **What X Is** | One-paragraph definition + the one structural fact that drives the tickets (e.g. "a capability of a DRM account, not a separate product") | bullets left + **illustration** (the thing-inside-the-platform) | plain, factual |
 | 3 | **How It Works (the parts that explain the questions/failures)** | Only the internals that explain what Support will be asked. Skip the rest. | bullets left + **illustration** (data flow / metering) | "mental model:" framing |
-| 4 | **Setting It Up / Enabling in DRM — This Part Is Yours** | The config/access path Support owns, step-checkable | bullets left + **screenshot placeholder** (the real DRM screen) | "this part is yours" |
+| 4 | **Setting It Up / Enabling in DRM — This Part Is Yours** | The config/access path Support owns, step-checkable | bullets left + **screenshot placeholder** (the real DRM screen; gray-panel layout 25/26 — fill its picture placeholder) | "this part is yours" |
 | 5 | **The Support Boundary** | The load-bearing slide: owns vs does-not-own, and the one-line test | bullets left + **illustration** (the boundary/handoff) | crisp, declarative |
 | 6 | **Pre-Flight Checklist / Before You Escalate** | The 3-thing check that resolves most tickets before escalation | numbered list, text (give it room) | imperative |
 | 7 | **Common Failures / Questions + First Response** | The actual tickets with the first thing to say/check for each | Q + first-response pairs, text | "like RR, the most common cause is enablement" |

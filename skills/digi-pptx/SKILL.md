@@ -124,7 +124,9 @@ const digiChartColors = ["91D46C", "1F7FA5", "1B4965", "CC6033", "00B7FF", "5656
 
 ---
 
-## Slide Anatomy (Content Slide — the most common)
+## Slide Anatomy (what every content slide shares)
+
+The chrome below is common to all content layouts — but there are **34 layouts per master**, not one, and the layout is picked per slide by what the content is: bullets, subhead+bullets, tabbed/labelled text, sidebar+main, generic canvas, product shot, gray-panel image, comparison table. The full inventory, per-layout geometry, and the content→layout decision rule are in [references/template-workflow.md](references/template-workflow.md) ("Layout inventory"). A deck built on one layout looks like one slide repeated — pick per slide, and prefer a layout's native picture placeholder over image zones when it has one.
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -182,14 +184,14 @@ These are mistakes a prior version of this skill made — don't repeat them:
 
 ## Quick Reference: Adding Content to a Slide
 
-Unpack the template, inject brand-styled shapes into the content slide (`slide2.xml`), repack. Full mechanics — placeholder geometry, the shape-injection helper, trimming to one slide, and the PDF/PNG QA render — are in [references/template-workflow.md](references/template-workflow.md). Brand colors and type sizes are in the tables above; use them verbatim.
+Unpack the template, pick the slide's layout from the inventory, point the slide at it, fill its placeholders, repack. Full mechanics — the 34-layout inventory with per-placeholder geometry, layout re-pointing, the shape-injection helper, trimming to one slide, and the PDF/PNG QA render — are in [references/template-workflow.md](references/template-workflow.md). Brand colors and type sizes are in the tables above; use them verbatim.
 
 ---
 
 ## Reference Files
 
 - `${CLAUDE_PLUGIN_ROOT}/assets/2024-Digi-Public-PPT-Template.potx` and `.../2024-Digi-Confidential-PPT-Template.potx` — the official Digi masters. **Start from the one matching the deck's classification, for every slide, one or many.**
-- `references/template-workflow.md` — How to edit the bundled template (unpack/edit/repack), including the single one-off slide recipe
+- `references/template-workflow.md` — How to edit the bundled template (unpack/edit/repack), the **full 34-layout inventory + content→layout selection guide**, and the single one-off slide recipe
 - `references/visuals.md` — Screenshots, placeholders, and generated graphics: the decision rule, image zones, and the two scripts. Read when a slide needs more than text.
 - `references/deck-blueprints/` — Blueprints for the decks Digi ships across every function: `internal/` (launch enablement, leadership review, business case, all-hands, project kickoff) and `customer-facing/` (sales pitch, customer QBR, webinar/conference). Slide archetypes + voice + visuals per audience. Start at its README for the find-yours-by-role table.
 - `scripts/gen_graphic.py` — Generate an on-brand Digi graphic (Nano Banana 2 / Gemini). `--prompt <subject> --out <file> --zone <name>`.

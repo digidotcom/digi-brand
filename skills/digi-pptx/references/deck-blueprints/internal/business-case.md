@@ -17,8 +17,8 @@ proves it, not just assert it.
 | 1 | **Title** | The ask in one line, presenter, org, date | template title | — |
 | 2 | **The cost of doing nothing** | What the status quo already costs, quantified, before any Digi ask appears | stat callouts + **illustration** | numbers, not adjectives |
 | 3 | **What we're proposing** | The one-breath statement of the request | short line, text | plain, no jargon |
-| 4 | **Alternatives considered** | Buy vs. build vs. partner vs. status quo, and why each loses except the recommendation | option + reason rows, text | factual, even-handed |
-| 5 | **The model** | Cost, timeline, and expected return — placeholders, no real figures in this blueprint | table or stat callouts, text | sourced, comparable |
+| 4 | **Alternatives considered** | Buy vs. build vs. partner vs. status quo, and why each loses except the recommendation | comparison-table layout (33/34): option / why it loses | factual, even-handed |
+| 5 | **The model** | Cost, timeline, and expected return — placeholders, no real figures in this blueprint | comparison-table layout (33/34) or stat callouts | sourced, comparable |
 | 6 | **What this assumes** | The 2-3 assumptions the answer is most sensitive to, named explicitly | numbered list, text | candid, "the case rests on…" |
 | 7 | **Payback and the downside case** | When it pays back if right, and what happens to the ask if the key assumption is wrong | two scenarios, text or stat callouts | direct, both cases shown |
 | 8 | **What we're asking for** | A specific, sized commitment — amount, headcount, or duration, never "support" | single clear ask, text | "we are asking for X, for Y duration" |

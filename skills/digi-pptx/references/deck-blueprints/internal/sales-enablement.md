@@ -16,16 +16,16 @@ customer, can they do the move."
 |---|---|---|---|---|
 | 1 | **Title** | Product, "Sales Enablement," org, date | template title | — |
 | 2 | **Your job in three moves** | Frame the whole session: SPOT IT / SAY IT / DEFEND IT | three numbered moves, text | "by the end you'll be able to…" |
-| 3 | **What it is, in one breath** | The 15-second line + the 3 tags (clientless / browser / where it lives) | short line + tags + **screenshot placeholder** | one breath, no jargon |
+| 3 | **What it is, in one breath** | The 15-second line + the 3 tags (clientless / browser / where it lives) | short line + tags + **screenshot placeholder** (product-slide layout 23/24 — fill its picture placeholder) | one breath, no jargon |
 | 4 | **The problem it kills** | The painful status-quo options, each one slow/costly/exposed | parallel pain list + **illustration** | "every one of these is slow, costly, and a security exposure" |
 | 5 | **How it works** | Only enough to be credible: the path + what it speaks + hardware scope | bullets + **illustration** (the p2p path) | plain, "no customer data through Digi's cloud" |
 | 6 | **Who buys it — and the questions that surface it** | Per segment: the buyer + the one discovery question that opens it | segment + ASK pairs, text | verbatim ASK questions |
 | 7 | **Why X wins** | The 3 differentiators as a seller would say them | 3 named wins + **illustration** | "a security story others can't tell" |
-| 8 | **How they buy (self-managed vs managed service)** | Self-managed vs managed-service, and which buyer is which | two-column, text | "same capability, two buyers" |
+| 8 | **How they buy (self-managed vs managed service)** | Self-managed vs managed-service, and which buyer is which | comparison-table layout (33/34), two columns | "same capability, two buyers" |
 | 9 | **The talk track** | DISCOVER → POSITION → PROVE, the actual motion | 3-step track, text | "lead with the truck roll, not the technology" |
 | 10 | **Objection handling** | The 3 they always hear, with the reframe that tightens posture | objection + answer pairs, text | confident, concrete |
-| 11 | **Live demo** | What to show and what to say while showing it | show/say pairs + **screenshot placeholder** (backup) | "this is the one nobody else can do" |
-| 12 | **Say this, not that** | The language guardrails: approved line vs the trap | two-column SAY/NOT, text | tight contrasts |
+| 11 | **Live demo** | What to show and what to say while showing it | show/say pairs + **screenshot placeholder** (backup; gray-panel layout 25/26) | "this is the one nobody else can do" |
+| 12 | **Say this, not that** | The language guardrails: approved line vs the trap | comparison-table layout (33/34), SAY/NOT columns | tight contrasts |
 | 13 | **Resources & links** | Demo env, datasheet, battlecard, who owns pricing (NDA) | link list, text | directory |
 | — | **Thank You** | contact | template closing | — |
 

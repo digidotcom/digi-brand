@@ -20,7 +20,7 @@ surface as a conflict weeks in.
 | 3 | **What's in scope** | The concrete deliverables this project covers | bullets, text | specific, checkable |
 | 4 | **What's explicitly out of scope** | Named exclusions — the things this project will NOT do, stated as plainly as slide 3 | bullets, text | equally specific, "not this" |
 | 5 | **What done looks like** | The definition of done, agreed before the schedule is set | criteria list, text | testable, unambiguous |
-| 6 | **Workstreams and owners** | One owner per workstream, named — never a team | table: workstream / owner / deliverable, text | one name per row |
+| 6 | **Workstreams and owners** | One owner per workstream, named — never a team | comparison-table layout (33/34): workstream / owner / deliverable | one name per row |
 | 7 | **Timeline** | Milestones tied to the definition-of-done criteria from slide 5 | timeline graphic or table + **illustration** | dated, concrete |
 | 8 | **Dependencies outside this room** | The people and teams this project needs but who are not in the kickoff | dependency + owner + what's needed, text | explicit, "we need X from Y by Z" |
 | 9 | **Decision rights** | Who decides on a contested call, and the escalation path if the decider is unavailable | text | crisp, declarative |

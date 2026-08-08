@@ -20,12 +20,12 @@ has to survive being read out of order.
 | 3 | **Why now** | The forcing function — what changes if this waits | 2-3 bullets, text | plain, no urgency theater |
 | 4 | **Where things stand** | The current state in numbers, each with a source and a comparison point | stat callouts + **illustration** (optional) | numbers, sourced |
 | 5 | **The plan** | What happens if the ask is approved — the shape of execution, not a full project plan | bullets + **illustration** | concrete, "here is what changes" |
-| 6 | **What it costs and what it returns** | The commercial shape of the ask — cost, timeline, expected return — placeholders, no real figures in this blueprint | table or stat callouts, text | numbers, not adjectives |
+| 6 | **What it costs and what it returns** | The commercial shape of the ask — cost, timeline, expected return — placeholders, no real figures in this blueprint | comparison-table layout (33/34) or stat callouts | numbers, not adjectives |
 | 7 | **Risks** | The real risks, named plainly, each with what is being done about it | risk + mitigation pairs, text | candid, "here is what could go wrong" |
 | 8 | **What we need from this room** | Restate the specific decision — approve, fund, unblock, or inform — and by when | single clear ask, text | "we need a decision on X by Y" |
-| 9 | **Path if approved / path if not** | What happens next in each case, so the room can weigh the actual choice | two-column, text | neutral, both paths real |
+| 9 | **Path if approved / path if not** | What happens next in each case, so the room can weigh the actual choice | comparison-table layout (33/34), approved / not columns | neutral, both paths real |
 | 10 | **Questions** | Open floor | prompt slide, text | — |
-| A1 | **(Appendix) Detailed numbers** | The full model behind slide 6, sourced line by line | table, text | reference |
+| A1 | **(Appendix) Detailed numbers** | The full model behind slide 6, sourced line by line | comparison-table layout (33/34) | reference |
 | A2 | **(Appendix) Alternatives considered** | What else was evaluated and why it lost | option + reason pairs, text | factual |
 | A3 | **(Appendix) Team and org impact** | Who executes, what it takes from other priorities | text | factual |
 | A4 | **(Appendix) Anything else the room is likely to ask** | Pre-built answers to the 2-3 hardest anticipated questions | Q + answer pairs, text | direct |

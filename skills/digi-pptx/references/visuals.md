@@ -40,6 +40,12 @@ provenance watermark (fine internally — just know it's there).
 
 ## Image zones
 
+**Zones are for layouts with no picture placeholder** (bullets, generic). If the
+slide's layout has a native picture placeholder — product slide 23/24, gray
+panels 25–32 — fill THAT at its own geometry instead (inventory in
+`template-workflow.md`); the design already placed the image, and a zone on top
+of it fights the layout.
+
 Geometry in inches on the 10 × 5.625" canvas. Every zone sits below the title
 (title band ends 0.80"; body starts 0.85") and above the footer (5.44"). `place_image.py --zone <name>`
 knows these; `gen_graphic.py --zone <name>` generates at the matching aspect so

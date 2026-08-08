@@ -21,7 +21,7 @@ is.
 | 1 | **Title** | Customer/topic name, "[Digi solution] for [buyer's environment]," date — no Digi overview | template title | — |
 | 2 | **The problem, in their words** | Open on the buyer's status quo pain, not on Digi. Name the operational reality they already live with | short scene text + **illustration** | concrete, their language not ours |
 | 3 | **What the status quo is costing** | Quantify it: downtime, truck rolls, exposure, compliance risk. This is the slide that earns the right to talk about Digi next | stat callouts + **illustration** | numbers, not adjectives |
-| 4 | **Introducing [Product], in one breath** | The 15-second line, now that the audience has a reason to care | short line + tags + **screenshot placeholder** | plain, no jargon |
+| 4 | **Introducing [Product], in one breath** | The 15-second line, now that the audience has a reason to care | short line + tags + **screenshot placeholder** (product-slide layout 23/24 — fill its picture placeholder) | plain, no jargon |
 | 5 | **How it works** | Architecture and data path — enough for the technical evaluator to trust it, not a spec dump | bullets + **illustration** (the path) | precise, "serves the evaluator" |
 | 6 | **What it means for the business** | Same capability, translated to uptime, headcount, and total cost — what the economic buyer takes to their own leadership | bullets + stat callout | plain, "serves the economic buyer" |
 | 7 | **Proof, not claims** | Deployment scale, reference counts, third-party validation or certifications. Credible because it is specific and checkable, not because it is impressive-sounding | **illustration** or logo/stat band (no named customers in this public repo — see Guardrails) | factual, verifiable |

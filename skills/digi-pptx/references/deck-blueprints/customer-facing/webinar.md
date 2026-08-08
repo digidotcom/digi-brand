@@ -27,7 +27,7 @@ continuously, and never assume anyone is still there.
 | 7 | **Concept 2: how it works in practice** | The deeper teaching block — more concrete, closer to something they could apply Monday | bullets + **illustration** | precise, "here's how you'd actually do this" |
 | 8 | **A worked example** | A generic scenario or vertical pattern that shows the concept applied — never a named account | short scene text + **illustration** | concrete, no attribution |
 | 9 | **Check-in** | Second attention reset, later in the session, before fatigue sets in | poll question, text | direct question, one line |
-| 10 | **Where this shows up in [Product]** | The pitch — late, brief, and framed as "if you want this built in," not a change of subject | short line + **screenshot placeholder** | plain, no hype adjectives |
+| 10 | **Where this shows up in [Product]** | The pitch — late, brief, and framed as "if you want this built in," not a change of subject | short line + **screenshot placeholder** (gray-panel layout 25/26) | plain, no hype adjectives |
 | 11 | **Recap: what you now know** | A standalone summary that works muted, at 1.5x speed, or six months from now with no other context | bullets, text | states conclusions, not "as we discussed" |
 | 12 | **Q&A — seeded question** | Open with a pre-loaded first question so the segment starts on substance, not silence | one question, text | conversational, answers the seed first |
 | 13 | **Your next step** | One resource or offer: the recording, a guide, a trial, a follow-up conversation — never a hard close | single clear ask, text | "here's where to go next" |
