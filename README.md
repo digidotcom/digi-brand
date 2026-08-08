@@ -52,14 +52,6 @@ because the channel expects Word; a brief renders wherever its reader is.
 - **decision-brief** — punchline first, audience-segmented disclosure, explicit
   internal markers.
 
-## What is deliberately not here
-
-Sales agreements and statements of work — legal instruments, owned by legal, and
-not appropriate for a public repo. Release notes, support KB articles, and
-security advisories — each already has an owner and a platform at Digi; a
-blueprint would be a second, worse copy. Product datasheets — marketing owns
-that template. PRDs and positioning documents — already in `pm-tools`.
-
 ## Contributing
 
 The test suite is a guard, not a formality. It fails the build if any file
