@@ -126,7 +126,7 @@ const digiChartColors = ["91D46C", "1F7FA5", "1B4965", "CC6033", "00B7FF", "5656
 
 ## Slide Anatomy (what every content slide shares)
 
-The chrome below is common to all content layouts — but there are **34 layouts per master**, not one, and the layout is picked per slide by what the content is: bullets, subhead+bullets, tabbed/labelled text, sidebar+main, generic canvas, product shot, gray-panel image, comparison table. The full inventory, per-layout geometry, and the content→layout decision rule are in [references/template-workflow.md](references/template-workflow.md) ("Layout inventory"). A deck built on one layout looks like one slide repeated — pick per slide, and prefer a layout's native picture placeholder over image zones when it has one.
+The chrome below is common to all content layouts — but the layout is picked **per slide** from the **nine in scope**, by what the content is: title (1), photo title (35), section divider (2), bullets (3), tab-labelled text (7 left / 13 right), generic canvas (21), product shot (23), gray-panel image (31). Per-layout geometry and the content→layout decision rule are in [references/template-workflow.md](references/template-workflow.md) ("Layout inventory"). A deck built on one layout looks like one slide repeated — pick per slide, and prefer a layout's native picture placeholder over image zones when it has one.
 
 ```
 ┌─────────────────────────────────────────────────────┐

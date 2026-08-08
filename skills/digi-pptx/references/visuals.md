@@ -40,11 +40,16 @@ provenance watermark (fine internally — just know it's there).
 
 ## Image zones
 
-**Zones are for layouts with no picture placeholder** (bullets, generic). If the
-slide's layout has a native picture placeholder — product slide 23/24, gray
-panels 25–32 — fill THAT at its own geometry instead (inventory in
-`template-workflow.md`); the design already placed the image, and a zone on top
-of it fights the layout.
+**Zones are for layouts with no picture placeholder** (bullets 3, tab-labelled
+7/13, generic 21). If the slide's layout has a native picture placeholder —
+product slide **23**, gray panel **31** — fill THAT at its own geometry instead
+(`5.62, 0.38, 3.91 × 4.69`; inventory in `template-workflow.md`); the design
+already placed the image, and a zone on top of it fights the layout.
+
+The **Photo Deck Title (35)** is a separate case again: its photograph is a
+slide *background*, applied with `scripts/set_title_photo.py`. Never place a
+title photo as a picture or a zone — slide shapes draw above the layout's scrim
+and chrome and hide the whole design.
 
 Geometry in inches on the 10 × 5.625" canvas. Every zone sits below the title
 (title band ends 0.80"; body starts 0.85") and above the footer (5.44"). `place_image.py --zone <name>`

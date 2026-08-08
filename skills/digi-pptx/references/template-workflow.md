@@ -25,7 +25,7 @@ The masters are `.potx` (template) files. When you unpack, edit, and repack to a
 extract-text /home/claude/working-deck.pptx
 ```
 
-Each master ships with **34 layouts** (`ppt/slideLayouts/slideLayout1..34.xml` — full inventory below) and two starter slides:
+Each master ships with **35 layouts**, of which **nine are in scope** (inventory below — the rest are a human's menu, not ours), plus two starter slides:
 - **Slide 1**: Title slide (layout "1_Generic Deck Title" — placeholder title, name/date)
 - **Slide 2**: Content slide (layout "1_Bullets (1-line head)" — header + bullet body)
 
@@ -33,7 +33,7 @@ There is no bundled Thank You slide; build a closing slide from the title layout
 
 ### 3. Pick a layout per slide — then edit
 
-**Pick the layout from the inventory below before writing any XML.** slideLayout3 ("1_Bullets") is not "the content layout" — it is one of 34, and a deck that uses only it looks like one slide repeated with different words. Every slide's content shape should choose its layout.
+**Pick the layout from the inventory below before writing any XML.** slideLayout3 ("1_Bullets") is not "the content layout" — it is one of nine, and a deck that uses only it looks like one slide repeated with different words. Every slide's content shape should choose its layout.
 
 > **Locating the base `pptx` skill.** This workflow leans on the sibling `pptx` skill for the unpack/edit/repack scripts. Its path depends on the environment: in Claude Code CLI it's `~/.claude/skills/pptx/`, in Claude Desktop it's `/mnt/skills/public/pptx/`. Below, `<pptx>` means whichever applies. Invoke/read the `pptx` skill first.
 
@@ -52,86 +52,96 @@ Follow the QA flow in `<pptx>/SKILL.md` — convert to images and verify:
 - Green top bar is present (comparison-table layouts are the one deliberate exception — see inventory)
 - No overflow or cut-off text
 
-## Layout inventory — the 34 layouts, verified from the potx and from renders
+## Layout inventory — the nine you use
 
-Verified facts, so you don't have to re-derive them:
-- Layout **names, numbering, and all content-placeholder geometry are identical in BOTH masters** (extracted from each potx's XML). The only difference is footer chrome: the Confidential master's slide-number/footer placeholders are `idx="10"`/`idx="11"`, the Public master's are `idx="2"`/`idx="3"`, shifted 0.10" right. You never touch those placeholders, so nothing to handle — just don't hardcode footer idx if you ever copy footer `<p:sp>` elements between masters.
-- Each potx contains **five slide masters** internally: title (L1), divider (L2), general content (L3–L22), picture/panel content (L23–L32), comparison table (L33–L34). All 34 layouts live in one flat `slideLayouts/` directory, so for XML editing the split doesn't matter; it only matters if you iterate `slide_layouts` via python-pptx (iterate all `slide_masters`).
-- Geometry below is inches on the 10 × 5.625" canvas, from the layout XML, as `x, y, w × h`. The footer band (logo, page number, classification) sits at y ≈ 5.44 on every content layout and is master chrome — never touched.
+The masters carry 35 layouts. **Nine are in scope; the rest are deliberately not documented.** They are not broken — they are a menu built for a person dragging boxes in PowerPoint, and most differ from one another only by a small green nub and a placeholder arrangement you can produce at any coordinate. Every layout listed here earns its place either by drawing brand artwork that cannot be recreated, or by being one a Digi colleague expects to see when they open the deck and edit it themselves. Selected by Josh Flinn, 2026-08-07, from rendered pixels.
 
-### Decision rule: content → layout family
+Verified facts, so you don't re-derive them:
+- Layout **names, numbering, and all content-placeholder geometry are identical in BOTH masters**. The only difference is footer chrome: the Confidential master's slide-number/footer placeholders are `idx="10"`/`idx="11"`, the Public master's are `idx="2"`/`idx="3"`, shifted 0.10" right. You never touch those, so nothing to handle — just don't hardcode footer idx if you copy footer `<p:sp>` elements between masters.
+- Each potx contains **five slide masters** internally. All layouts live in one flat `slideLayouts/` directory, so for XML editing the split doesn't matter; it matters only if you iterate `slide_layouts` via python-pptx (iterate all `slide_masters`).
+- Geometry is inches on the 10 × 5.625" canvas, from the layout XML, as `x, y, w × h`. The footer band (logo, page number, classification) sits at y ≈ 5.44 on content layouts and is master chrome — never touched.
 
-Pick by what the slide's content IS:
+### Decision rule: content → layout
 
-| The slide is… | Use family | Layouts |
+| The slide is… | Use | Layout |
 |---|---|---|
-| Deck opening / closing | Title | 1 |
-| A topic change | Section divider | 2 |
-| Plain prose points | Bullets | 3/4 |
-| A one-line takeaway + supporting points | Subhead + bullets | 5/6 |
-| Text under a category/eyebrow label | Left-tab or right-tab text | 7–12, 13/14 |
-| A narrow sidebar + a wide main area | Left tab + 2 content | 15–20 |
-| Free-form or custom-composed (diagrams, cards, stat callouts, image zones) | Generic slide | 21/22 |
-| A product/feature shot with text beside it | Product slide (native picture) | 23/24 |
-| An image or screenshot presented on a styled panel | Gray panel (native picture) | 25/26, 31/32 |
-| A small image + caption with IoT-flavored icon accents | Gray panel + tab + icons (native picture) | 27–30 |
-| Side-by-side / vs. / feature-matrix content | Comparison table | 33/34 |
+| Deck opening / closing | Generic Deck Title | 1 |
+| Deck opening that wants a photograph | **Photo Deck Title** | 35 |
+| A topic change | Section Divider | 2 |
+| Plain prose points | Bullets | 3 |
+| Text under a category/eyebrow label (left) | Left tab + left text | 7 |
+| Same, without pushing the title right | Right tab | 13 |
+| Free-form: diagrams, cards, stat callouts, image zones | Generic slide | 21 |
+| A product/feature shot with text beside it | Product slide (native picture) | 23 |
+| An image or screenshot on a styled panel | Gray panel (native picture) | 31 |
 
-**1-line vs 2-line head — pick by title length, every time.** Every content family comes in a pair: the "(1-line head)" layout has a 0.42"-tall title band with the body starting at y 0.85; the "(2-line head)" layout has a 0.73" band with the body at y 1.17. A long title on a 1-line layout overflows the band; a short title on a 2-line layout wastes a 0.32" strip of content space. Estimate: a title over ~55 characters at 36pt needs the 2-line layout.
+**Only the `(1-line head)` variants are in scope.** Each of these has a `(2-line head)` twin whose sole difference is a taller title box — 0.73" instead of 0.42", body pushed from y 0.85 to y 1.17. That is two numbers, not a design. If a title wraps past one line (roughly 55+ characters at 36pt), **widen the title box and drop the body yourself** on the 1-line layout rather than switching files.
 
-**Native picture placeholders (layouts 23–32): fill them, don't re-invent them.** These layouts already position the image where the design wants it, with panel chrome behind it. Put the image AT the picture placeholder's geometry (from the tables below) — `place_image.py --x --y --w --h` with those exact values, `--fit` for screenshots. Do **not** reach for the named zones (`right-half`, `hero`, …) on these layouts; the zones in `visuals.md` exist for layouts with **no** picture placeholder (bullets, generic). This is the difference between "the image keeps ending up in the same right-hand box" and using the design.
+**Native picture placeholders (23, 31): fill them; do not reach for a zone.** These layouts already put the image where the design wants it, with panel chrome behind it. Place the image AT the placeholder geometry below — `place_image.py --x --y --w --h` with those exact values, `--fit` for screenshots. The named zones in `visuals.md` (`right-half`, `hero`, …) exist for layouts with **no** picture placeholder (Bullets, Generic). Using a zone on 23 or 31 is what makes every image land in the same hand-computed box instead of the designed one.
 
-### Title / divider (layouts 1–2)
+### 1 — `1_Generic Deck Title`
 
-**1 — `1_Generic Deck Title`.** Light gray diagonal panel over white, DIGI logo top-left, layered green triangle motif bottom-right. All decoration is layout chrome — edit only the two placeholders.
+Light gray diagonal panel over white, DIGI logo top-left, layered green triangle motif bottom-right. All decoration is layout chrome — edit only the two placeholders.
 - title: 0.47, 1.40, 7.00 × 2.70 · name/date body `idx="10"`: 0.47, 4.11, 7.00 × 1.00
 
-**2 — `1_Generic Section Divider`.** Large light-gray diagonal panels fill the slide (denser than the title look), big title mid-left, optional one-line subhead below, logo bottom-left, green triangle bottom-right. Use at every topic change in a deck of any length — it is the visual breather that stops the bullets-blur.
+### 35 — `Photo Deck Title` (photograph behind the title)
+
+The same diagonal as layout 1, filled instead as a **translucent dark scrim** (`202123` at 62% opacity) over a full-bleed photograph: the image reads dimmed on the left where the title sits and at full strength on the right. Logo, green triangles, and title sit on top. Same placeholder geometry as layout 1 (body is `idx="1"` here).
+
+**The photograph is a slide BACKGROUND, never a picture on the slide.** OOXML renders slide background → master → layout → slide, so anything placed on the slide draws *above* the scrim and chrome and destroys the design. Use the dedicated script:
+
+```bash
+# one of the four library photographs
+python3 scripts/set_title_photo.py --unpacked unpacked/ --slide 1 --photo night-city-connections
+python3 scripts/set_title_photo.py --list          # what's available
+
+# or any custom image
+python3 scripts/set_title_photo.py --unpacked unpacked/ --slide 1 --image work/site.jpg
+```
+
+Pick a photograph whose subject sits on the **right** — the scrim covers the left, and a busy left side fights the title. With no photo set the layout renders as scrim-over-white, which is a valid if plain fallback. The library is `assets/photos/` and is **not in git** (third-party licensed stock; see `assets/photos/README.md` to populate it).
+
+### 2 — `1_Generic Section Divider`
+
+Large light-gray diagonal panels fill the slide (denser than the title look), big title mid-left, optional one-line subhead below, logo bottom-left, green triangle bottom-right. Use at every topic change in a deck of any length — it is the visual breather that stops the bullets-blur.
 - title (inherited): 0.50, 1.23, 6.66 × 2.30 · subhead body `idx="12"`: 0.50, 3.70, 6.66 × 1.10
 
-### Text layouts (3/4 Bullets · 5/6 Subhead + bullets · 21/22 Generic) — styling, not capability
+### 3 — `1_Bullets (1-line head)`
 
-Pure text arrangements, no branded decoration beyond the standard chrome. A text box can be placed at any coordinate on any layout, so these buy **inherited text styling**, not placement capability: 3/4 style the body as a bullet list (the workhorse every deck previously over-used); 5/6 style the first outline level as an **unbulleted subhead** (lead with the takeaway, bullets from level 2); 21/22 leave the body plain, drop the corner triangle, and are the **free-form canvas** — shape-built diagrams, stat callouts, card grids, and the named image zones from `visuals.md` belong here (or on Bullets), never on a picture-placeholder layout.
-- All six share one geometry: title 0.38, 0.38, 9.15 × 0.42|0.73 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22 (2-line: 0.38, 1.17, 9.15 × 3.90). One quirk: layout 6 narrows title and body to **9.00** wide — the template's own inconsistency, not a typo.
+The plain content slide: standard chrome, body styled as a bullet list, green corner triangle bottom-right. The workhorse — but a deck built only from this reads as one slide repeated, which is the reason the rest of this list exists.
+- title 0.38, 0.38, 9.15 × 0.42 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22
 
-### Tab-labeled text (layouts 7–12 left tab · 13/14 right tab)
+### 7 — `1_Left tab + left text (1-line head)`
 
-A **green ribbon tab over the top edge** carries a short category/eyebrow label (white text on green). Use when slides belong to a labeled track ("SECURITY", "ROADMAP") and the deck should show it. Left-tab variants add **teal trapezoid tabs on the bottom edge** for secondary labels (source, product line, section marker).
-- **7/8 (left tab):** tab `idx="13"` 0.71, 0.05, 2.84 × 0.22 · title indented to 1.00, 0.62, 8.54 × 0.42|0.73 · body `idx="14"` 1.00, 1.10, 8.54 × 3.97 | 1.00, 1.40, 8.54 × 3.66
-- **9/10:** adds bottom-right teal tab `idx="15"` 7.12, 5.40, 2.31 × 0.22 · **11/12:** adds a second bottom tab `idx="16"` 4.02, 5.39, 2.31 × 0.22
-- **13/14 (right tab):** tab sits top-**right** `idx="13"` 6.31, 0.03, 2.84 × 0.22; title/body stay at the normal full-width position (title 0.38, 0.38, 9.15 × 0.42|0.73 · body `idx="14"` 0.38, 0.85, 9.15 × 4.22 | 0.38, 1.17, 9.15 × 3.90). Use when the label should not push the title right.
+A **green ribbon tab over the top-left edge** carrying a short category/eyebrow label in white. Use when slides belong to a labeled track ("SECURITY", "ROADMAP") and the deck should show it. Title and body are indented right to clear the tab.
+- tab `idx="13"` 0.71, 0.05, 2.84 × 0.22 · title 1.00, 0.62, 8.54 × 0.42 · body `idx="14"` 1.00, 1.10, 8.54 × 3.97
 
-### Left tab + 2 content (layouts 15–20) — sidebar + main
+### 13 — `1_Right tab (1-line head)`
 
-Green top-left tab, then **two content areas**: a narrow left column (2.5" wide — a product image, spec list, or nav-style rail) and a 6"-wide main area; the title sits over the main area (x 3.80). Variants add bottom teal tabs. This is the right family for "small thing on the left, big thing on the right" — not an image zone bolted onto a bullets slide.
-- **15/16:** tab `idx="13"` 0.41, 0.04, 2.84 × 0.22 · left `idx="14"` 0.60, 0.78, 2.50 × 3.50 · title 3.80, 0.38, 6.00 × 0.42|0.73 · main `idx="15"` 3.80, 0.85, 6.00 × 4.22 | 3.80, 1.17, 6.00 × 3.90
-- **17/18:** same slots renumbered — left `idx="15"`, main `idx="16"`, plus bottom-right tab `idx="17"` 7.12, 5.39, 2.31 × 0.22
-- **19/20:** left `idx="16"`, main `idx="17"`, bottom tabs `idx="19"` 4.02, 5.39 and `idx="20"` 7.12, 5.39 (each 2.31 × 0.22)
+Same eyebrow-label idea with the tab at top-**right**, so the title keeps its normal full-width position. Use when the label should not push the title inward.
+- tab `idx="13"` 6.31, 0.03, 2.84 × 0.22 · title 0.38, 0.38, 9.15 × 0.42 · body `idx="14"` 0.38, 0.85, 9.15 × 4.22
 
-### Product slide (layouts 23–24) — native full-height picture, right
+### 21 — `1_Generic slide (1-line head)`
 
-White slide with a **picture placeholder filling the right column** (green triangle tucked behind its bottom corner). Made for a product/feature shot with text beside it — the image position is designed in; fill it.
-- **23/24:** title 0.38, 0.38, 9.15 × 0.42|0.73 · body `idx="12"` 0.38, 0.85|1.17, 9.15 × 4.22|3.90 · **pic `idx="13"` 5.62, 0.38, 3.91 × 4.69**
-- ⚠ The body placeholder is full-width and runs **under** the picture — keep body text inside x ≤ 5.4 (about 5.0" of usable width) or it disappears behind the image.
+The free-form canvas: standard chrome, plain body, no corner triangle. Shape-built diagrams, stat callouts, card grids, and the named image zones from `visuals.md` belong **here** — never on a picture-placeholder layout.
+- title 0.38, 0.38, 9.15 × 0.42 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22
 
-### Gray panel (layouts 25–26 "Sliced", 31–32 plain) — picture on a styled panel
+### 23 — `1_Generic product slide (1-line head)` — native picture, right
 
-The right ~40% of the slide is a **light-gray panel** (25/26 with an angled "sliced" top edge; 31/32 straight) with a full-height picture placeholder on it, green triangle bottom-right. Text column is properly narrowed to 5.12" — no under-image overlap here. Use for screenshots or images that deserve a framed presentation.
-- **25/26:** title 0.38, 0.38, 5.12 × 0.42|0.73 · body `idx="12"` 0.38, 0.85|1.17, 5.12 × 4.22|3.90 · **pic `idx="13"` 5.62, 0.38, 3.91 × 4.66**
-- **31/32:** same text geometry · **pic `idx="13"` 5.62, 0.38, 3.91 × 4.70|4.69**
-- (Layout 26's template name is `4_Slided gray panel` — the "Slided" typo is in the potx itself; match it exactly when matching by name.)
+White slide with a **picture placeholder filling the right column**, green triangle tucked behind its bottom corner. Made for a product or feature shot with text beside it.
+- title 0.38, 0.38, 9.15 × 0.42 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22 · **pic `idx="13"` 5.62, 0.38, 3.91 × 4.69**
+- ⚠ The body placeholder is full-width and runs **under** the picture — keep body text inside x ≤ 5.4 (about 5.0" usable) or it disappears behind the image.
 
-### Gray panel + tab + icons (layouts 27–30) — image + caption + fixed icon chrome
+### 31 — `9_Gray panel (1-line head)` — native picture on a styled panel
 
-Gray right panel with a green tab top-right, a **smaller picture placeholder** at the panel top, a **caption text placeholder** under it, and **three fixed decorative teal icons** (padlock, link, wi-fi) drawn on the panel's left edge as layout chrome. The icons are baked into the layout — they cannot be swapped per-slide, and they read as security/connectivity. Use only when that IoT flavor fits; there is **no true generic stat/icon-row layout** in this template — compose stat rows on a Generic slide (21/22) instead.
-- **27/28:** tab `idx="13"` 6.31, 0.03, 2.84 × 0.22 · title 0.38, 0.38, 5.12 × 0.42|0.73 · body `idx="12"` 0.38, 0.85|1.17, 5.12 × 4.22|3.90 · **pic `idx="15"` 6.13, 0.79, 3.65 × 2.36** · caption `idx="14"` 6.12, 3.27, 3.65 × 2.27
-- **29/30 ("deep tab"):** same, but the tab is a taller two-line green block `idx="16"` 6.34, 0.00, 2.84 × 0.55 (replaces `idx="13"`)
+The right ~40% is a **light-gray panel** with a full-height picture placeholder on it, green triangle bottom-right. The text column is properly narrowed to 5.12", so unlike layout 23 there is no under-image overlap. Use for screenshots or images that deserve a framed presentation.
+- title 0.38, 0.38, 5.12 × 0.42 · body `idx="12"` 0.38, 0.85, 5.12 × 4.22 · **pic `idx="13"` 5.62, 0.38, 3.91 × 4.70**
 
-### Comparison table (layouts 33–34) — side-by-side / vs.
+### Not in scope — and one worth knowing about
 
-A silver tab top-right, title, and a full-width body whose first level is styled small and bold (11.5pt) — built as the backdrop for an inserted table. **Quirk, verified from renders: these two layouts have no green top bar** — that is the design, not a bug; don't hand-draw one. There is no native table placeholder; insert a `<a:tbl>` graphic frame at the body's geometry (brand it per `SKILL.md`: Ice-Blue alternating rows, Silver borders).
-- **33 (1-line):** title 0.38, 0.38, 9.15 × 0.42 · body `idx="12"` 0.38, 0.85, 9.15 × 4.22 · tab `idx="13"` 6.50, 0.06, 2.83 × 0.21
-- **34 (2-line):** title (inherited) 0.38, 0.38, 9.15 × 0.73 · body `idx="12"` 0.38, 1.17, 9.15 × 3.75 · tab `idx="13"` 6.50, 0.06, 2.83 × 0.21
+The undocumented layouts include bullets/subhead variants, further tab permutations, two-content sidebars, sliced-panel variants, comparison tables, and every `(2-line head)` twin. Compose what they'd give you on **21 (Generic)** instead.
+
+One deserves a specific warning, because it looks the most appealing and is the most misleading: **`Gray panel + tab + icons` (layouts 27–30) carries three fixed teal icons — padlock, link, wi-fi — drawn into the layout as embedded `<p:pic>` chrome.** They cannot be swapped or removed per slide, and they assert security/connectivity/wireless whatever the slide actually says. Don't reach for it because it looks rich; build a stat or icon row on 21 instead.
 
 ## Important: Don't Touch the Slide Master
 

@@ -3,3 +3,12 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 .env
+
+# Title photography — third-party licensed stock, NOT ours to redistribute.
+# This repo is public; a stock license permits use in Digi materials, not
+# publishing the image file where anyone can download it. Populate locally
+# from the Digi template library (see assets/photos/README.md, which IS
+# tracked and explains how).
+assets/photos/*.jpeg
+assets/photos/*.jpg
+assets/photos/*.png
