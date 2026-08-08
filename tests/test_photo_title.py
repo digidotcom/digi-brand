@@ -7,10 +7,11 @@ Two things are easy to break silently here:
    layout shapes in OOXML), which destroys the design without erroring. The
    photograph has to arrive as a slide background instead.
 
-2. No photograph may ship inside the masters or the repo *while this repo is
-   public and the title imagery's provenance is unverified*. The files carry no
-   rights metadata either way, and git history is permanent, so the guard holds
-   until Digi marketing confirms ownership. See assets/photos/README.md.
+2. The four title photographs must SHIP. Digi owns them outright (confirmed by
+   Taylor Salentine, 2026-08-07), and a plugin that makes every employee
+   recover images by hand is not a plugin. They are files in assets/photos/,
+   not embedded in the masters — the masters stay photograph-free because the
+   photo is applied per deck as a slide background.
 """
 import subprocess
 import zipfile
@@ -75,23 +76,40 @@ def test_masters_ship_no_photographs():
         assert photos == [], f"{potx.name} ships photographic media: {photos}"
 
 
-def test_photo_library_images_are_not_tracked_by_git():
+EXPECTED_PHOTOS = {
+    "city-skyline-network",
+    "night-city-connections",
+    "offshore-platform",
+    "transit-traveler",
+}
+
+
+def test_the_four_title_photographs_ship():
+    # A plugin whose photo library has to be reassembled by hand on every
+    # machine is not a plugin. Digi owns these outright, so they ship.
     tracked = subprocess.run(
         ["git", "ls-files", "assets/photos"],
         cwd=ROOT, capture_output=True, text=True, check=True,
     ).stdout.split()
-    offenders = [f for f in tracked if not f.endswith(".md")]
-    assert offenders == [], (
-        f"third-party stock photography must not be committed to this public repo: {offenders}"
-    )
+    stems = {Path(f).stem for f in tracked if not f.endswith(".md")}
+    missing = EXPECTED_PHOTOS - stems
+    assert not missing, f"title photographs missing from the repo: {sorted(missing)}"
+    for name in EXPECTED_PHOTOS:
+        matches = list((ROOT / "assets" / "photos").glob(f"{name}.*"))
+        assert matches, f"{name} is tracked but not on disk"
+        assert matches[0].stat().st_size > 10_000, f"{name} looks truncated"
 
 
-def test_photo_library_readme_is_tracked_and_explains_how_to_populate():
+def test_photo_library_readme_records_who_confirmed_the_rights():
+    # The files were stripped of metadata, so the bytes cannot answer "can we
+    # use these?". This README is the only place that answer lives — losing it
+    # means someone re-runs the whole provenance question from scratch.
     readme = ROOT / "assets" / "photos" / "README.md"
     assert readme.is_file()
     text = readme.read_text()
     assert "set_title_photo.py" in text
-    assert "licensed" in text.lower()
+    assert "Taylor Salentine" in text, "the rights confirmation must name its source"
+    assert "2026-08-07" in text, "the rights confirmation must carry its date"
 
 
 def test_set_title_photo_script_runs():

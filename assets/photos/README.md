@@ -3,51 +3,25 @@
 Photographs for the **Photo Deck Title** layout. Applied as a slide background
 by `skills/digi-pptx/scripts/set_title_photo.py`.
 
-## The image files are NOT in this repo — pending a provenance answer
+## Rights
 
-`.gitignore` excludes every image here. This is a **hold, not a known
-restriction**, and the distinction matters:
+**Digi purchased these outright and owns them, with no restriction on use**
+— confirmed by Taylor Salentine, who owns Digi's brand and template library,
+2026-08-07. They ship in this repo and need no attribution, no license file,
+and no special handling.
 
-**What was verified.** The four files carry no rights metadata whatsoever —
-EXIF-only APP1 segments (114–138 bytes), an empty 54-byte Photoshop IPTC stub,
-no XMP packet, no copyright/creator/credit/licensor string. All four were
-processed through Photoshop and stripped, which is routine for template
-artwork. `offshore-platform.jpeg` has a Nikon ICC profile, so it is
-camera-original rather than a rendered composite.
+Recorded here rather than left to memory because the question is expensive to
+re-ask and the files themselves cannot answer it: all four were processed
+through Photoshop and stripped of metadata, so they carry no rights, creator,
+or credit fields at all. Anyone inspecting the bytes will find nothing and may
+reasonably wonder — this section is the answer.
 
-**What that proves: nothing about licensing.** A stock download and an in-house
-Digi shoot are indistinguishable after Photoshop stripping. We do not know
-whether Digi owns these outright or licensed them from an agency.
+They originate from the earlier-generation Digi deck template
+(`Digi template.pptx`), which embedded them in its title layouts.
 
-**Why we hold anyway.** This repo is public and git history is effectively
-permanent — deleting a file later does not un-publish it. Publishing an asset
-of unknown provenance is the one move that cannot be walked back, so waiting
-costs nothing and guessing could cost a lot.
+## The four photographs
 
-**How to resolve it:** ask Digi marketing (the brand/template owner) where the
-2024 template's title photographs came from. If Digi owns them, commit them and
-delete this section. If they are licensed, the license terms decide whether an
-internal repo is in scope.
-
-Everything else about the feature is in the repo. Only the pixels are missing,
-and any image works in their place.
-
-## Populating the library
-
-The four photographs come from the earlier-generation Digi deck template
-(`Digi template.pptx`), which carried them embedded in its title layouts. To
-recover them locally:
-
-```bash
-mkdir -p /tmp/digi-src && cd /tmp/digi-src
-unzip -q "$HOME/Downloads/Digi template.pptx"
-cp ppt/media/image2.jpeg  "$OLDPWD/city-skyline-network.jpeg"
-cp ppt/media/image10.jpeg "$OLDPWD/offshore-platform.jpeg"
-cp ppt/media/image23.jpeg "$OLDPWD/night-city-connections.jpeg"
-cp ppt/media/image26.jpeg "$OLDPWD/transit-traveler.jpeg"
-```
-
-Verify with `python3 skills/digi-pptx/scripts/set_title_photo.py --list`.
+Listed with `python3 skills/digi-pptx/scripts/set_title_photo.py --list`.
 
 | Name | Subject | Reads as |
 | --- | --- | --- |
@@ -70,7 +44,6 @@ Pick something that reads at a glance and is legible under the scrim. The
 translucent dark diagonal covers the left of the slide where the title sits, so
 a photo whose subject is on the **right** works best — a busy or high-contrast
 left side fights the title text. Generated photography works too
-(`gen_graphic.py --style photo`), and carries no licensing question at all
-since we produce it.
+(`gen_graphic.py --style photo`) when no real photograph fits the subject.
 
 Formats: `.jpg`, `.jpeg`, `.png`.

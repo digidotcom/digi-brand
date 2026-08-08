@@ -1,7 +1,7 @@
 {
   "name": "digi-brand",
   "description": "Digi International's brand applied to the artifacts people actually make: decks and documents. Carries the official palette and typography as a single source of truth, the two official 2024 PowerPoint masters (Public and Confidential, chosen by classification), the vendored Source Sans fonts, Word styling, and reusable blueprints for recurring Digi document genres including Product Change Notices. Ships the two official 2024 masters (Public and Confidential), a Photo Deck Title layout whose photograph is supplied per deck, the vendored Source Sans families, and a curated nine-layout inventory.",
-  "version": "2026.08.07-2",
+  "version": "2026.08.07-3",
   "author": {
     "name": "Josh Flinn",
     "email": "joshua.flinn@digi.com"

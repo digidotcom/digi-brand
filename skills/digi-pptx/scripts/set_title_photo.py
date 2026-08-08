@@ -25,10 +25,9 @@ place_image.py.
 
     python3 set_title_photo.py --list        # show the library
 
-The library lives in `assets/photos/` and is NOT in git — the title imagery's
-provenance is unverified and this repo is public, so it is held out pending an
-answer from Digi marketing. See `assets/photos/README.md` for status and how to
-populate it locally. Any image works in their place.
+The library lives in `assets/photos/` and ships with the plugin — Digi owns the
+four photographs outright. Any custom image works just as well; see
+`assets/photos/README.md` for what each one reads as.
 """
 from __future__ import annotations
 

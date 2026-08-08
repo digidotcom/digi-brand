@@ -3,14 +3,3 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 .env
-
-# Title photography — held out pending a provenance answer, NOT a known
-# license restriction. The files carry no rights metadata at all (verified:
-# EXIF-only APP1, empty IPTC stub, no XMP), so we cannot tell from them
-# whether Digi owns these or licensed them. This repo is public and git
-# history is effectively permanent, so the cautious default is to wait for
-# an answer from Digi marketing rather than publish and find out.
-# See assets/photos/README.md (tracked) for status and how to populate.
-assets/photos/*.jpeg
-assets/photos/*.jpg
-assets/photos/*.png
